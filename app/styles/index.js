@@ -1,5 +1,3 @@
-var AndaleMono = require('../andale-mono.ttf');
-
 var styles = {
 	courseDescription: {
 		color: "#009688",
