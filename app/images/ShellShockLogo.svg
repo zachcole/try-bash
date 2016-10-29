@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="164px" height="164px" viewBox="0 0 164 164" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="23" y="23" width="110" height="110" rx="8"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-7" y="-7" width="124" height="124">
+            <rect x="16" y="16" width="124" height="124" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-405.000000, -793.000000)">
+            <g id="Group-7" transform="translate(326.000000, 717.000000)">
+                <g id="Group" transform="translate(83.000000, 80.000000)">
+                    <g id="Rectangle-10" transform="translate(78.000000, 78.000000) rotate(45.000000) translate(-78.000000, -78.000000) ">
+                        <use fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <use stroke="#546E7A" mask="url(#mask-2)" stroke-width="14" xlink:href="#path-1"></use>
+                    </g>
+                    <text id=":~$" font-family="AvenirNext-Heavy, Avenir Next" font-size="64" font-weight="600" letter-spacing="-1.73714292" fill="#009688">
+                        <tspan x="24.2337144" y="94">:~$</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
