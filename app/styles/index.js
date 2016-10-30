@@ -30,6 +30,10 @@ var styles = {
     	verticalAlign: "middle",
     	float: "none"
 	},
+	homeVideo: {
+		marginTop: 50,
+		marginBottom: 50
+	},
 	navBar: {
 		marginBottom: 0,
 		backgroundColor: "#FFFFFF",

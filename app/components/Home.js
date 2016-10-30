@@ -7,7 +7,7 @@ var ShellShockLogo = require('../images/ShellShockLogo.svg');
 var GitGoingLogo = require('../images/GitGoingLogo.svg');
 var CourseDescriptionStyle = require('../styles').courseDescription;
 var homeImage = require('../styles').homeImage;
-var divWrapHeight = require('../styles').divWrapHeight;
+var homeVideo = require('../styles').homeVideo;
 
 var Home = React.createClass({
 	render : function () {
@@ -23,6 +23,12 @@ var Home = React.createClass({
 							<br/>
 							<h2 style={titleDescription}>Coming November 2016</h2>	
 						</div>
+					</div>
+				</div>
+
+				<div className="col-sm-4 col-sm-offset-4" style={homeVideo}>
+					<div className="embed-responsive embed-responsive-16by9">
+  						<iframe className="embed-responsive-item" src="https://www.youtube.com/embed/bs4nkfdaAqY"></iframe>
 					</div>
 				</div>
 
