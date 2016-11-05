@@ -6,11 +6,15 @@ var IndexRoute = ReactRouter.IndexRoute;
 var browserHistory = ReactRouter.browserHistory;
 var Main = require('../components/Main');
 var Home = require('../components/Home');
+var Lesson = require('../containers/Lesson');
 
 var routes = (
-	<Router history={browserHistory}>
+	<Router>
 		<Route path='/' component={Main}>
 			<IndexRoute component={Home} />
+			<Route path='lesson/' component={Lesson}>
+				<Route path='test' component={Lesson} />
+			</Route>
 		</Route>
 	</Router>
 );

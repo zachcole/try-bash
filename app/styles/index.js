@@ -20,6 +20,14 @@ var styles = {
 		marginTop: 10,
 		marginBottom: 10
 	},
+	directionsComponent: {
+		backgroundColor: "#E0F2F1",
+		height: "100vh"
+	},
+	editorComponent: {
+		backgroundColor: "#80CBC4",
+		height: "40vh"
+	},
 	homeBackground: {
 		backgroundColor: '#009688',
 		marginBottom: 0,
@@ -34,10 +42,25 @@ var styles = {
 		marginTop: 50,
 		marginBottom: 50
 	},
+	lessonBackground: {
+		backgroundColor: '#009688',
+		marginBottom: 0,
+		height: "100vh",
+
+	},
 	navBar: {
 		marginBottom: 0,
 		backgroundColor: "#FFFFFF",
 		fontFamily: "AndaleMono"
+	},
+	sidebarComponent: {
+		backgroundColor: "#546E7A",
+		height: "100vh",
+		width: "100%"
+	},
+	terminalComponent: {
+		backgroundColor: "#00695C",
+		height: "40vh"
 	},
 	title: {
 		fontSize: 48,
