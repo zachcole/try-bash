@@ -39,7 +39,7 @@ var Terminal = React.createClass({
 	render: function () {
 		return (
 			<div style={terminalComponent}>
-				<ReactBash extensions={extensions} structure={structure} history={history} theme="light"/>
+				<ReactBash extensions={extensions} structure={structure} history={history} theme="green"/>
 			</div>
 		)
 	}
