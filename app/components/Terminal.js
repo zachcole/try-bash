@@ -2,7 +2,6 @@ var React = require('react');
 var terminalComponent = require('../styles').terminalComponent;
 var ReactBash = require('zach-bash').default;
 
-
 const extensions = {
     sudo: {
         exec: ({ structure, history, cwd }) => {
