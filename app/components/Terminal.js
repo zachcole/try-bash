@@ -1,15 +1,19 @@
 var React = require('react');
 var terminalComponent = require('../styles').terminalComponent;
 var ReactBash = require('zach-bash').default;
+var Link = require('react-router').Link;
+
 
 const extensions = {
     sudo: {
-        exec: ({ structure, history, cwd }) => {
-            return { structure, cwd,
-                history: history.concat({ value: 'Nice try... (ಠ(ಠ(ಠ_ಠ)ಠ)ಠ)' }),
-            };
-        },
-    },
+        exec: function(object) {
+            return (
+                {structure: object.structure,
+                cwd: object.cwd, 
+                history: object.history.concat({value: "nice try"})}
+            )
+        }
+    }
 };
 
 const history = [
@@ -39,6 +43,8 @@ var Terminal = React.createClass({
 		return (
 			<div style={terminalComponent}>
 				<ReactBash extensions={extensions} structure={structure} history={history} theme="green"/>
+                <button className="btn btn-primary" onClick={this.props.onClick.bind("Stirng")}>Submit</button>
+                <p>{this.props.testText}</p>
 			</div>
 		)
 	}

@@ -1,9 +1,13 @@
+var testSidebar = require('./CourseSidebars').TestCourse;
+
+console.log(testSidebar);
+
 var TestCourse = {
 
 	testLesson: {
 		sidebar: {
 			title: "Test Course",
-			list: ["Lesson 1", "Lesson 2", "Lesson 3"]
+			list: testSidebar
 		},
 		terminal: "",
 		editor: "",

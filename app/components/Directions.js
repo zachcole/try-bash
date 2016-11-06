@@ -35,8 +35,7 @@ var Directions = React.createClass({
 				<h2 style={directionsNumber}>{this.props.number}</h2>
 				<h2 style={directionsTitle}>{this.props.title}</h2>
 				<p style={directionsBody}>{displayBody}</p>
-				<Link to={this.props.navPath} onClick={this.onClick}>
-					<button className="btn btn-primary" style={directionsButton}>Submit</button></Link>
+				{this.props.showButton ? <Link to={this.props.navPath} onClick={this.onClick}><button className="btn btn-primary" style={directionsButton}>Submit</button></Link> : null}
 				</div>
 		)
 	}
