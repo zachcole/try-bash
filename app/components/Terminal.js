@@ -2,6 +2,7 @@ var React = require('react');
 var terminalComponent = require('../styles').terminalComponent;
 var ReactBash = require('zach-bash').default;
 var Link = require('react-router').Link;
+var terminalButton = require('../styles').terminalButton;
 
 
 const extensions = {
@@ -43,8 +44,7 @@ var Terminal = React.createClass({
 		return (
 			<div style={terminalComponent}>
 				<ReactBash extensions={extensions} structure={structure} history={history} theme="green"/>
-                <button className="btn btn-primary" onClick={this.props.onClick.bind("Stirng")}>Submit</button>
-                <p>{this.props.testText}</p>
+                <button className="btn btn-primary" onClick={this.props.onClick} style={terminalButton}>Submit</button>
 			</div>
 		)
 	}

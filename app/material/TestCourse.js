@@ -1,7 +1,5 @@
 var testSidebar = require('./CourseSidebars').TestCourse;
 
-console.log(testSidebar);
-
 var TestCourse = {
 
 	testLesson: {

@@ -92,9 +92,18 @@ var styles = {
 		textAlign: "center",
 		color: "#FFFFFF"
 	},
+	terminalButton: {
+		textAlign: "center",
+		background: "#FFFFFF",
+		border: "1px solid #009688",
+		color: "#009688",
+		textAlign: "center",
+		marginTop: 30
+	},
 	terminalComponent: {
 		backgroundColor: "#00695C",
-		height: "40vh"
+		height: "40vh",
+		textAlign: "center"
 	},
 	terminalEditorContainer: {
 		padding: 0

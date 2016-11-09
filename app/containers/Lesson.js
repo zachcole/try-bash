@@ -7,9 +7,11 @@ var lessonBackground = require('../styles').lessonBackground;
 var sidebarContainer = require('../styles').sidebarContainer;
 var terminalEditorContainer = require('../styles').terminalEditorContainer;
 var directionsContainer = require('../styles').directionsContainer;
+var browserHistory = require('react-router').browserHistory; 
 
 var testString = "test";
-var showButton = false;
+var showDirectionsButton = true;
+var showTerminalButton = false;
 
 var Lesson = React.createClass({
 	render: function () {
@@ -21,30 +23,29 @@ var Lesson = React.createClass({
 					<Sidebar list={material.sidebar.list} title={material.sidebar.title}/>
 				</div>
 				<div className="col-sm-4 col-sm-offset-1" style={terminalEditorContainer}>
-					<Terminal onClick={this.handleChildClick} testText={testString}/>
+					<Terminal onClick={this.handleTerminalClick} testText={testString} showButton={showTerminalButton}/>
 				</div>
 				<div className="col-sm-4 col-sm-offset-1" style={directionsContainer}>
-					<Directions number={material.directions.number} title={material.directions.title} body={material.directions.body} navPath={material.directions.navPath} showButton={showButton}/>
+					<Directions onClick={this.handleDirectionsClick} number={material.directions.number} title={material.directions.title} body={material.directions.body} navPath={material.directions.navPath} showButton={showDirectionsButton}/>
 				</div>
 			</div>
 		)
 	},
-	handleChildClick: function(event) {
+	handleDirectionsClick: function(event) {
      // You can access the prop you pass to the children 
      // because you already have it! 
      // Here you have it in state but it could also be
      //  in props, coming from another parent.
      // testString = "TEST2";
-     console.log(event)
-     if (testString == "test") {
-     	testString = "test2";
-     	showButton = true;
-     } else {
-     	testString = "test";
-     	showButton = false;
-     }
+     browserHistory.push('/');
+     showDirectionsButton = false;
      this.forceUpdate();
      // console.log(this.props); 
+ 	},
+ 	handleTerminalClick: function(event) {
+
+
+ 		this.forceUpdate();
  	}
 });
 
