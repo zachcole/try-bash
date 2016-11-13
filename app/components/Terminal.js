@@ -1,5 +1,6 @@
 var React = require('react');
 var terminalComponent = require('../styles').terminalComponent;
+var testing = require('zach-bash');
 var ReactBash = require('zach-bash').default;
 var Link = require('react-router').Link;
 var terminalButton = require('../styles').terminalButton;
@@ -39,15 +40,29 @@ const structure = {
     'README.md': { content: '✌⊂(✰‿✰)つ✌ Thanks for checking out the tool! There is a lot that you can do with react-bash and I\'m excited to see all of the fun commands and projects build on top of it!' },
 };
 
+var testBash = <ReactBash extensions={extensions} structure={structure} history={history} theme="green"/>;
+var testString = "props to you";
+console.log(testing);
+
+
+
 var Terminal = React.createClass({
+    getInitialState() {
+        return {
+             terminal: testBash,
+        };
+    },
 	render: function () {
 		return (
 			<div style={terminalComponent}>
-				<ReactBash extensions={extensions} structure={structure} history={history} theme="green"/>
-                <button className="btn btn-primary" onClick={this.props.onClick} style={terminalButton}>Submit</button>
+                {testBash}
+                <button className="btn btn-primary" onClick={this.handleClick} style={terminalButton}>Submit</button>
 			</div>
 		)
-	}
+	},
+    handleClick: function () {
+        this.props.onClick(this, testBash.type.currentState);
+    },
 });
 
 module.exports = Terminal;

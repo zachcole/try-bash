@@ -1,4 +1,5 @@
 var React = require('react');
+var Link = require('react-router').Link;
 var homeBackground = require('../styles').homeBackground;
 var title = require('../styles').title;
 var titleDescription = require('../styles').titleDescription;
@@ -36,7 +37,9 @@ var Home = React.createClass({
 					<h2 className="text-center" style={CourseDescriptionStyle}>Get started with the absolute basics.</h2>
 					<div className="row">
 						<div className="col-sm-3 col-sm-offset-2">
-							<CourseListing courseName="Shell Shock" image={ShellShockLogo} courseDescription="Learn the basics of the Linux shell, bash, with no prior experience."/>
+							<Link to="/shellshock">
+								<CourseListing courseName="Shell Shock" image={ShellShockLogo} courseDescription="Learn the basics of the Linux shell, bash, with no prior experience."/>
+							</Link>
 						</div>
 						<div className="col-sm-3 col-sm-offset-1">
 							<CourseListing courseName="Git Going" image={GitGoingLogo} courseDescription="Learn the basics of version control using Git on bash."/>

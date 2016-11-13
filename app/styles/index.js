@@ -21,20 +21,29 @@ var styles = {
 		marginBottom: 10
 	},
 	directionsBody: {
-		textAlign: "center"
+		textAlign: "center",
+		margin: 20
 	},
 	directionsButton: {
 		textAlign: "center",
 		background: "#009688",
-		border: "1px solid #979797"
+		border: "1px solid #979797",
+		position: "absolute",
+		bottom: 0
 	},
 	directionsComponent: {
 		backgroundColor: "#E0F2F1",
-		height: "90vh",
-		textAlign: "center"
+		height: "82vh",
+		textAlign: "center",
+		borderRadius: 15,
+		border: "10px solid #979797",
+		position: "relative"
 	},
 	directionsContainer: {
-		padding: 0
+		paddingTop: 30,
+		paddingBottom: 30,
+		paddingRight: 30,
+		paddingLeft: 0
 	},
 	directionsNumber: {
 		marginTop: 0,
@@ -67,12 +76,16 @@ var styles = {
 		marginBottom: 0,
 		height: "90vh",
 		width: "100%"
-
 	},
 	navBar: {
 		marginBottom: 0,
 		backgroundColor: "#FFFFFF",
 		fontFamily: "AndaleMono"
+	},
+	sidebarChapter: {
+		color: "#FFFFFF",
+		fontSize: 16,
+		textAlign: "center"
 	},
 	sidebarComponent: {
 		backgroundColor: "#546E7A",
@@ -88,6 +101,11 @@ var styles = {
 		textAlign: "center",
 		color: "#FFFFFF"
 	},
+	sidebarLesson: {
+		color: "#FFFFFF",
+		fontSize: 12,
+		textAlign: "center"
+	},
 	sidebarList: {
 		textAlign: "center",
 		color: "#FFFFFF"
@@ -102,8 +120,11 @@ var styles = {
 	},
 	terminalComponent: {
 		backgroundColor: "#00695C",
-		height: "40vh",
-		textAlign: "center"
+		height: "70vh",
+		textAlign: "center",
+		marginTop: 30,
+		borderRadius: 15,
+		border: "10px solid #979797"
 	},
 	terminalEditorContainer: {
 		padding: 0

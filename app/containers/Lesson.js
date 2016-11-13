@@ -20,7 +20,7 @@ var Lesson = React.createClass({
 		return (
 			<div style={lessonBackground}>
 				<div className="col-sm-2" style={sidebarContainer}>
-					<Sidebar list={material.sidebar.list} title={material.sidebar.title}/>
+					<Sidebar list={material.sidebar.list} title={material.sidebar.title} active={material.directions.number + " " + material.directions.title}/>
 				</div>
 				<div className="col-sm-4 col-sm-offset-1" style={terminalEditorContainer}>
 					<Terminal onClick={this.handleTerminalClick} testText={testString} showButton={showTerminalButton}/>
@@ -32,20 +32,12 @@ var Lesson = React.createClass({
 		)
 	},
 	handleDirectionsClick: function(event) {
-     // You can access the prop you pass to the children 
-     // because you already have it! 
-     // Here you have it in state but it could also be
-     //  in props, coming from another parent.
-     // testString = "TEST2";
-     browserHistory.push('/');
-     showDirectionsButton = false;
-     this.forceUpdate();
-     // console.log(this.props); 
+	    browserHistory.push('/');
+	    showDirectionsButton = false;
+	    this.forceUpdate();
  	},
- 	handleTerminalClick: function(event) {
-
-
- 		this.forceUpdate();
+ 	handleTerminalClick: function(e, terminal) {
+ 		console.log(terminal);
  	}
 });
 
