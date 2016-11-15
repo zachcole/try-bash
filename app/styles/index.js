@@ -29,7 +29,9 @@ var styles = {
 		background: "#009688",
 		border: "1px solid #979797",
 		position: "absolute",
-		bottom: 0
+		bottom: 0,
+		marginLeft: -20	,
+		marginBottom: 30
 	},
 	directionsComponent: {
 		backgroundColor: "#E0F2F1",
@@ -128,6 +130,15 @@ var styles = {
 	},
 	terminalEditorContainer: {
 		padding: 0
+	},
+	terminalEvalTextFailing: {
+		marginTop: 20,
+		color: "#ff1c1c"
+	},
+	terminalEvalTextPassing: {
+		marginTop: 20,
+		color: "#21ce3d",
+		background: "#ffffff"
 	},
 	title: {
 		fontSize: 48,

@@ -4,7 +4,12 @@ var ShellShock = {
 
 	introduction: {
 		sidebar: shellShockSidebar,
-		terminal: "",
+		terminal: {
+			prefix: "trybash@shellshock",
+			// history: [
+			// 	{ value: 'Welcome to ShellShock Introduction!' },
+			// ]
+		},
 		editor: "",
 		directions: {
 			number: "Introduction",
@@ -14,11 +19,36 @@ var ShellShock = {
 				"Before we get started, let’s get familiar with the workspace.  This canvas is where you will read all of the information provided throughout the course.  It is also where you will see visual representations of exercises.  You will also notice the two windows to your left.  The top is our bash shell and the bottom is our text editor.  We will get into more detail on using these as we go. You can always come back to this lesson if you forget where something is. Let’s get started!"
 			],
 			navPath: "/shellshock/1/1"
+		},
+		acceptanceCriteria: {
+			history: {},
+			structure: {
+				'.hidden': {
+			        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
+			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+			        dir2: {
+			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+			        },
+			        '.secrets': { content: 'I\'m still afraid of the dark...' },
+			    },
+			    public: {
+			        file1: { content: 'The is the content for file1 in the <public> directory.' },
+			        file2: { content: 'The is the content for file2 in the <public> directory.' },
+			        file3: { content: 'The is the content for file3 in the <public> directory.' },
+			    },
+			    'README.md': { content: '✌⊂(✰‿✰)つ✌ Thanks for checking out the tool! There is a lot that you can do with react-bash and I\'m excited to see all of the fun commands and projects build on top of it!' },
+			},
+			cwd: ""
 		}
 	},
 	lesson1_1: {
 		sidebar: shellShockSidebar,
-		terminal: "",
+		terminal: {
+			prefix: "trybash@shellshock",
+			// history: [
+			// 	{ value: 'Welcome to ShellShock Lesson 1.1!' },
+			// ]
+		},
 		editor: "",
 		directions: {
 			number: "1.1",
@@ -28,11 +58,21 @@ var ShellShock = {
 				"Most Linux and Mac operating systems come loaded with a shell called bash. Other than sounding cool, the name of the shell has a bit of history. Steve Bourne developed a shell program called sh for the original Unix operating system.  Thus, bash is actually an acronym for “Bourne Again SHell”, implying the enhancement to Bourne’s original work. 	"
 			],
 			navPath: "/shellshock/1/2"
+		},
+		acceptanceCriteria: {
+			history: {},
+			structure: {},
+			cwd: ""
 		}
 	},
 	lesson1_2: {
 		sidebar: shellShockSidebar,
-		terminal: "",
+		terminal: {
+			prefix: "trybash@shellshock",
+			// history: [
+			// 	{ value: 'Welcome to ShellShock Introduction!' },
+			// ]
+		},
 		editor: "",
 		directions: {
 			number: "1.2",
@@ -42,11 +82,21 @@ var ShellShock = {
 				" Have a look at the column to the left. The top window is a simulation of a terminal.  The terminal allows us to view and input interactions with the bash shell in a way that we can understand.  To get started, type ‘help’ into the emulator and press the enter/return key. In doing so, we will get an extensive guide to reference at anytime if we get stuck."
 			],
 			navPath: "/shellshock/1/3"
+		},
+		acceptanceCriteria: {
+			history: {},
+			structure: {},
+			cwd: ""
 		}
 	},
 	lesson1_3: {
 		sidebar: shellShockSidebar,
-		terminal: "",
+		terminal: {
+			prefix: "trybash@shellshock",
+			// history: [
+			// 	{ value: 'Welcome to ShellShock Introduction!' },
+			// ]
+		},
 		editor: "",
 		directions: {
 			number: "1.3",
@@ -56,11 +106,21 @@ var ShellShock = {
 				"Let’s put some of this into action to get familiar with the terminal.  Type ‘date’ and press enter. You’ll notice this command outputs the current date and time to us in the terminal. Now, press the up arrow to retrieve ‘date’ from your command history. Traverse left and delete the ‘a’ in the command. Examine how the terminal responds to commands that are not defined."
 			],
 			navPath: "/shellshock/2/1"
+		},
+		acceptanceCriteria: {
+			history: {},
+			structure: {},
+			cwd: ""
 		}
 	},
 	lesson2_1: {
 		sidebar: shellShockSidebar,
-		terminal: "",
+		terminal: {
+			prefix: "trybash@shellshock",
+			// history: [
+			// 	{ value: 'Welcome to ShellShock Introduction!' },
+			// ]
+		},
 		editor: "",
 		directions: {
 			number: "2.1",
@@ -70,11 +130,21 @@ var ShellShock = {
 				"When working in bash, we will find ourselves in different directories.  Sometimes we forget where we are and need a reminder as to which directory we are in. The directory we are currently inside of is what we call the working directory.  Type the ‘pwd’ command, an acronym for ‘print working directory’, to see which directory we are currently under."
 			],
 			navPath: "/shellshock/2/2"
+		},
+		acceptanceCriteria: {
+			history: {},
+			structure: {},
+			cwd: ""
 		}
 	},
 	lesson2_2: {
 		sidebar: shellShockSidebar,
-		terminal: "",
+		terminal: {
+			prefix: "trybash@shellshock",
+			// history: [
+			// 	{ value: 'Welcome to ShellShock Introduction!' },
+			// ]
+		},
 		editor: "",
 		directions: {
 			number: "2.2",
@@ -84,11 +154,21 @@ var ShellShock = {
 				"Run the ‘ls’ command and check out all of the files in our root directory!"
 			],
 			navPath: "/shellshock/2/3"
+		},
+		acceptanceCriteria: {
+			history: {},
+			structure: {},
+			cwd: ""
 		}
 	},
 	lesson2_3: {
 		sidebar: shellShockSidebar,
-		terminal: "",
+		terminal: {
+			prefix: "trybash@shellshock",
+			// history: [
+			// 	{ value: 'Welcome to ShellShock Introduction!' },
+			// ]
+		},
 		editor: "",
 		directions: {
 			number: "2.3",
@@ -98,11 +178,21 @@ var ShellShock = {
 				"Run ‘ls -l’ in the terminal.  You’ll notice that you get the same output, but with a bunch of random dashes and letters in front of each item.  These letters denote what we can do with each file. Each letter denotes a permission, and we will learn more about them in the next lesson."
 			],
 			navPath: "/shellshock/2/4"
+		},
+		acceptanceCriteria: {
+			history: {},
+			structure: {},
+			cwd: ""
 		}
 	},
 	lesson2_4: {
 		sidebar: shellShockSidebar,
-		terminal: "",
+		terminal: {
+			prefix: "trybash@shellshock",
+			// history: [
+			// 	{ value: 'Welcome to ShellShock Introduction!' },
+			// ]
+		},
 		editor: "",
 		directions: {
 			number: "2.4",
@@ -112,11 +202,21 @@ var ShellShock = {
 				"Run the ‘ls -l’ command in the terminal again to check out the permissions in our working directory."
 			],
 			navPath: "/shellshock/3/1"
+		},
+		acceptanceCriteria: {
+			history: {},
+			structure: {},
+			cwd: ""
 		}
 	},
 	lesson3_1: {
 		sidebar: shellShockSidebar,
-		terminal: "",
+		terminal: {
+			prefix: "trybash@shellshock",
+			// history: [
+			// 	{ value: 'Welcome to ShellShock Introduction!' },
+			// ]
+		},
 		editor: "",
 		directions: {
 			number: "3.1",
@@ -126,11 +226,21 @@ var ShellShock = {
 				"Use ‘ls -l’ to check out our current directory.  Notice that we have a directory name ‘MyDirectory’. Move into ‘MyDirectory’ by running ‘cd MyDirectory’. Then run ‘pwd’ to see we have in fact changed directories.  Finally, run the ‘ls’ command to check out our new working directory!"
 			],
 			navPath: "/shellshock/3/2"
+		},
+		acceptanceCriteria: {
+			history: {},
+			structure: {},
+			cwd: ""
 		}
 	},
 	lesson3_2: {
 		sidebar: shellShockSidebar,
-		terminal: "",
+		terminal: {
+			prefix: "trybash@shellshock",
+			// history: [
+			// 	{ value: 'Welcome to ShellShock Introduction!' },
+			// ]
+		},
 		editor: "",
 		directions: {
 			number: "3.2",
@@ -140,11 +250,21 @@ var ShellShock = {
 				"Run ‘cd ..’ in the terminal. Notice that the space between ‘cd’ and ‘..’ is critical.  Now run ‘pwd’ and ‘ls’ again.  We are back into our root directory!"
 			],
 			navPath: "/shellshock/3/3"
+		},
+		acceptanceCriteria: {
+			history: {},
+			structure: {},
+			cwd: ""
 		}
 	},
 	lesson3_3: {
 		sidebar: shellShockSidebar,
-		terminal: "",
+		terminal: {
+			prefix: "trybash@shellshock",
+			// history: [
+			// 	{ value: 'Welcome to ShellShock Introduction!' },
+			// ]
+		},
 		editor: "",
 		directions: {
 			number: "3.3",
@@ -154,11 +274,21 @@ var ShellShock = {
 				"You may have noticed that ‘MyDirectory’ had a subdirectory named ‘MySubDir’. Say there is some important info in that directory we want, and we know that’s where we want to navigate.  Use the ‘cd’ command to navigate there directly. (Hint, the filepath for ‘MySubDir’ is ‘root/MyDirectory/MySubDir’.)"
 			],
 			navPath: "/shellshock/4/1"
+		},
+		acceptanceCriteria: {
+			history: {},
+			structure: {},
+			cwd: ""
 		}
 	},
 	lesson4_1: {
 		sidebar: shellShockSidebar,
-		terminal: "",
+		terminal: {
+			prefix: "trybash@shellshock",
+			// history: [
+			// 	{ value: 'Welcome to ShellShock Introduction!' },
+			// ]
+		},
 		editor: "",
 		directions: {
 			number: "4.1",
@@ -168,11 +298,21 @@ var ShellShock = {
 				"In our root directory, notice we have an entry for ‘editor’ and that it is an executable file. Run the ‘editor’ command and open up the editor.  You will also notice a file, ‘file.txt.’, in our root directory. Open up this file in our editor by running ‘editor file.txt’."
 			],
 			navPath: "/shellshock/4/2"
+		},
+		acceptanceCriteria: {
+			history: {},
+			structure: {},
+			cwd: ""
 		}
 	},
 	lesson4_2: {
 		sidebar: shellShockSidebar,
-		terminal: "",
+		terminal: {
+			prefix: "trybash@shellshock",
+			// history: [
+			// 	{ value: 'Welcome to ShellShock Introduction!' },
+			// ]
+		},
 		editor: "",
 		directions: {
 			number: "4.2",
@@ -182,11 +322,21 @@ var ShellShock = {
 				"Navigate to the root directory and run ‘editor newfile.txt’. Notice that bash does not mention anything about the file not existing, but your editor does. Bash is simply carrying out the command and letting the editor handle the details. Pretty cool! Follow the prompt to create the file, and make sure to save it. Now check out our working directory to find your new file!"
 			],
 			navPath: "/shellshock/4/3"
+		},
+		acceptanceCriteria: {
+			history: {},
+			structure: {},
+			cwd: ""
 		}
 	},
 	lesson4_3: {
 		sidebar: shellShockSidebar,
-		terminal: "",
+		terminal: {
+			prefix: "trybash@shellshock",
+			// history: [
+			// 	{ value: 'Welcome to ShellShock Introduction!' },
+			// ]
+		},
 		editor: "",
 		directions: {
 			number: "4.3",
@@ -196,11 +346,21 @@ var ShellShock = {
 				"Move to the root directory and run ‘mkdir newdir’ to make a new directory. Now navigate into ‘newdir’ and create a file named ‘copy.txt’."
 			],
 			navPath: "/shellshock/4/4"
+		},
+		acceptanceCriteria: {
+			history: {},
+			structure: {},
+			cwd: ""
 		}
 	},
 	lesson4_4: {
 		sidebar: shellShockSidebar,
-		terminal: "",
+		terminal: {
+			prefix: "trybash@shellshock",
+			// history: [
+			// 	{ value: 'Welcome to ShellShock Introduction!' },
+			// ]
+		},
 		editor: "",
 		directions: {
 			number: "4.4",
@@ -210,11 +370,21 @@ var ShellShock = {
 				"In our new directory, copy ‘copy.txt’ to a file called ‘newcopy.txt’.  Now, copy ‘copy.txt’ into our root directory."
 			],
 			navPath: "/shellshock/4/5"
+		},
+		acceptanceCriteria: {
+			history: {},
+			structure: {},
+			cwd: ""
 		}
 	},
 	lesson4_5: {
 		sidebar: shellShockSidebar,
-		terminal: "",
+		terminal: {
+			prefix: "trybash@shellshock",
+			// history: [
+			// 	{ value: 'Welcome to ShellShock Introduction!' },
+			// ]
+		},
 		editor: "",
 		directions: {
 			number: "4.5",
@@ -224,11 +394,21 @@ var ShellShock = {
 				"In our new directory, create a file called ‘move.txt’. Utilize the ‘mv’ command to move this file into the root directory."
 			],
 			navPath: "/shellshock/4/6"
+		},
+		acceptanceCriteria: {
+			history: {},
+			structure: {},
+			cwd: ""
 		}
 	},
 	lesson4_6: {
 		sidebar: shellShockSidebar,
-		terminal: "",
+		terminal: {
+			prefix: "trybash@shellshock",
+			// history: [
+			// 	{ value: 'Welcome to ShellShock Introduction!' },
+			// ]
+		},
 		editor: "",
 		directions: {
 			number: "4.6",
@@ -238,11 +418,21 @@ var ShellShock = {
 				"Use ‘rm copy.txt’ in the root directory to delete the ‘copy.txt’ file completely."
 			],
 			navPath: "/shellshock/challenge"
+		},
+		acceptanceCriteria: {
+			history: {},
+			structure: {},
+			cwd: ""
 		}
 	},
 	recap: {
 		sidebar: shellShockSidebar,
-		terminal: "",
+		terminal: {
+			prefix: "trybash@shellshock",
+			// history: [
+			// 	{ value: 'Welcome to ShellShock Introduction!' },
+			// ]
+		},
 		editor: "",
 		directions: {
 			number: "Challenge",
@@ -252,6 +442,11 @@ var ShellShock = {
 				"Here it is: create a new directory. Inside that directory, create a new file.  Copy the file within the directory. Delete the original file. Then, move the remaining copied file to the root directory. Finally, delete the directory you made. Good luck!"
 			],
 			navPath: "/"
+		},
+		acceptanceCriteria: {
+			history: {},
+			structure: {},
+			cwd: ""
 		}
 	},
 }

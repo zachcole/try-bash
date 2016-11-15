@@ -4,6 +4,8 @@ var testing = require('zach-bash');
 var ReactBash = require('zach-bash').default;
 var Link = require('react-router').Link;
 var terminalButton = require('../styles').terminalButton;
+var terminalEvalTextPassing = require('../styles').terminalEvalTextPassing;
+var terminalEvalTextFailing = require('../styles').terminalEvalTextFailing;
 
 
 const extensions = {
@@ -17,11 +19,6 @@ const extensions = {
         }
     }
 };
-
-const history = [
-    { value: 'Hackers will be high-fived. ( ‘-’)人(ﾟ_ﾟ )' },
-    { value: 'Type `help` to begin' },
-];
 
 const structure = {
     '.hidden': {
@@ -48,21 +45,23 @@ console.log(testing);
 
 var Terminal = React.createClass({
     getInitialState() {
+        {console.log(this.props)}
         return {
-             terminal: testBash,
+             terminal: <ReactBash extensions={extensions} structure={structure} history={this.props.material.history} theme="green" prefix={this.props.material.prefix}/>,
         };
     },
 	render: function () {
 		return (
 			<div style={terminalComponent}>
-                {testBash}
+                {this.state.terminal}
                 <button className="btn btn-primary" onClick={this.handleClick} style={terminalButton}>Submit</button>
+                <p style={this.props.passingCriteria ? terminalEvalTextPassing : terminalEvalTextFailing}>{this.props.evaluationText}</p>
 			</div>
 		)
 	},
     handleClick: function () {
         this.props.onClick(this, testBash.type.currentState);
-    },
+    }
 });
 
 module.exports = Terminal;
