@@ -29,10 +29,13 @@ const structure = {
         },
         '.secrets': { content: 'I\'m still afraid of the dark...' },
     },
-    public: {
+    MyDirectory: {
         file1: { content: 'The is the content for file1 in the <public> directory.' },
         file2: { content: 'The is the content for file2 in the <public> directory.' },
         file3: { content: 'The is the content for file3 in the <public> directory.' },
+        MySubDir: {
+            subfile: {content: "This is a nested file."}
+        }
     },
     'README.md': { content: '✌⊂(✰‿✰)つ✌ Thanks for checking out the tool! There is a lot that you can do with react-bash and I\'m excited to see all of the fun commands and projects build on top of it!' },
 };
@@ -44,7 +47,7 @@ console.log(testing);
 
 
 var Terminal = React.createClass({
-    getInitialState() {
+    getInitialState: function() {
         {console.log(this.props)}
         return {
              terminal: <ReactBash extensions={extensions} structure={structure} history={this.props.material.history} theme="green" prefix={this.props.material.prefix}/>,
@@ -54,7 +57,7 @@ var Terminal = React.createClass({
 		return (
 			<div style={terminalComponent}>
                 {this.state.terminal}
-                <button className="btn btn-primary" onClick={this.handleClick} style={terminalButton}>Submit</button>
+                {this.props.showButton ? <button className="btn btn-primary" onClick={this.handleClick} style={terminalButton}>Submit</button> : null}
                 <p style={this.props.passingCriteria ? terminalEvalTextPassing : terminalEvalTextFailing}>{this.props.evaluationText}</p>
 			</div>
 		)

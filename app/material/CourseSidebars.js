@@ -82,26 +82,26 @@ var CourseSidebars = {
 				style: lessonStyle,
 				linkPath: "shellshock/3/3"
 			},
-			{
-				title: "4. File and Directory Manipulation",
-				style: chapterStyle,
-				linkPath: "shellshock/4/1"
-			},
-			{
-				title: "4.1 Opening Files",
-				style: lessonStyle,
-				linkPath: "shellshock/4/1"
-			},
-			{
-				title: "4.2 Populating Directories",
-				style: lessonStyle,
-				linkPath: "shellshock/4/2"
-			},
-			{
-				title: "4.3 Making Directories",
-				style: lessonStyle,
-				linkPath: "shellshock/4/3"
-			},
+			// {
+			// 	title: "4. File and Directory Manipulation",
+			// 	style: chapterStyle,
+			// 	linkPath: "shellshock/4/1"
+			// },
+			// {
+			// 	title: "4.1 Opening Files",
+			// 	style: lessonStyle,
+			// 	linkPath: "shellshock/4/1"
+			// },
+			// {
+			// 	title: "4.2 Populating Directories",
+			// 	style: lessonStyle,
+			// 	linkPath: "shellshock/4/2"
+			// },
+			// {
+			// 	title: "4.3 Making Directories",
+			// 	style: lessonStyle,
+			// 	linkPath: "shellshock/4/3"
+			// },
 			// {
 			// 	title: "4.4 Copying Files",
 			// 	style: lessonStyle,

@@ -15,29 +15,14 @@ var ShellShock = {
 			number: "Introduction",
 			title: "The Workspace",
 			body: [
-				"Welcome to Shell Shock! In this course, you will learn the absolute basics of the Linux shell bash.  No prior experience is required to complete this course.",
-				"Before we get started, let’s get familiar with the workspace.  This canvas is where you will read all of the information provided throughout the course.  It is also where you will see visual representations of exercises.  You will also notice the two windows to your left.  The top is our bash shell and the bottom is our text editor.  We will get into more detail on using these as we go. You can always come back to this lesson if you forget where something is. Let’s get started!"
+				"Welcome to Shell Shock! In this course, you will learn the absolute basics of the Linux shell bash.  No prior experience is required to complete this course.  Press next to get started!",
+				"Before we get started, let’s get familiar with the workspace.  This canvas is where you will read all of the information provided throughout the course.  It is also where you will see visual representations of exercises.  You will also notice the fancy window to your left.  This is your terminal, but more on that in a moment.  You'll notice the next button that you clicked to get here disappeared.  This is because in the second portion of each lesson, you must pass the exercise to move on.  For this lesson, just press the white submit button below the terminal. You can always come back to this lesson if you forget where something is. Let’s get started!"
 			],
 			navPath: "/shellshock/1/1"
 		},
 		acceptanceCriteria: {
-			history: {},
-			structure: {
-				'.hidden': {
-			        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
-			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
-			        dir2: {
-			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
-			        },
-			        '.secrets': { content: 'I\'m still afraid of the dark...' },
-			    },
-			    public: {
-			        file1: { content: 'The is the content for file1 in the <public> directory.' },
-			        file2: { content: 'The is the content for file2 in the <public> directory.' },
-			        file3: { content: 'The is the content for file3 in the <public> directory.' },
-			    },
-			    'README.md': { content: '✌⊂(✰‿✰)つ✌ Thanks for checking out the tool! There is a lot that you can do with react-bash and I\'m excited to see all of the fun commands and projects build on top of it!' },
-			},
+			history: [],
+			structure: {},
 			cwd: ""
 		}
 	},
@@ -60,7 +45,7 @@ var ShellShock = {
 			navPath: "/shellshock/1/2"
 		},
 		acceptanceCriteria: {
-			history: {},
+			history: [],
 			structure: {},
 			cwd: ""
 		}
@@ -79,12 +64,12 @@ var ShellShock = {
 			title: "The Terminal",
 			body: [
 				"So, the bash shell sounds great and all, but how do we actually use it? In order to interact with the shell, we use a program called a terminal.  A terminal provides us a graphical user interface (GUI) to interact with the shell.  This is often what people visualize when they think of the command line.",
-				" Have a look at the column to the left. The top window is a simulation of a terminal.  The terminal allows us to view and input interactions with the bash shell in a way that we can understand.  To get started, type ‘help’ into the emulator and press the enter/return key. In doing so, we will get an extensive guide to reference at anytime if we get stuck."
+				"Have a look at the column to the left. The top window is a simulation of a terminal.  The terminal allows us to view and input interactions with the bash shell in a way that we can understand.  To get started, type ‘help’ into the emulator and press the enter/return key. In doing so, we will get an extensive guide to reference at anytime if we get stuck."
 			],
 			navPath: "/shellshock/1/3"
 		},
 		acceptanceCriteria: {
-			history: {},
+			history: ["help"],
 			structure: {},
 			cwd: ""
 		}
@@ -103,12 +88,12 @@ var ShellShock = {
 			title: "Examining The Terminal",
 			body: [
 				"There are probably a few things about the terminal that you are wondering about.  First, let’s talk about the shell prompt.  The shell prompt is what we call that piece of texting preceding the input.  It reads “trybash@linuxbox~$” in our terminal.  The shell prompt is usually in the format of “username@machinename~$” and can look a little different on different terminals.  This ultimately gives us an idea of what machine we are working on.  This can be important later as you learn more about Linux, but don’t worry for now.  We can also use the arrow keys to help traverse the terminal. Pressing up and down sifts through your command history, and using the left and right arrows allow you to move the cursor and edit your command entry.",
-				"Let’s put some of this into action to get familiar with the terminal.  Type ‘date’ and press enter. You’ll notice this command outputs the current date and time to us in the terminal. Now, press the up arrow to retrieve ‘date’ from your command history. Traverse left and delete the ‘a’ in the command. Examine how the terminal responds to commands that are not defined."
+				"Let’s put some of this into action to get familiar with the terminal.  Type ‘clear’ and press enter. You’ll notice this command look like it didn't do much, but it actually clears the all of the visible command history from the terminal display. Now, press the up arrow to retrieve ‘clear’ from your command history. Traverse left and delete the ‘a’ in the command. Examine how the terminal responds to commands that are not defined."
 			],
 			navPath: "/shellshock/2/1"
 		},
 		acceptanceCriteria: {
-			history: {},
+			history: ["cler", "-bash: cler: command not found"],
 			structure: {},
 			cwd: ""
 		}
@@ -132,7 +117,7 @@ var ShellShock = {
 			navPath: "/shellshock/2/2"
 		},
 		acceptanceCriteria: {
-			history: {},
+			history: ["pwd"],
 			structure: {},
 			cwd: ""
 		}
@@ -156,7 +141,7 @@ var ShellShock = {
 			navPath: "/shellshock/2/3"
 		},
 		acceptanceCriteria: {
-			history: {},
+			history: ["ls"],
 			structure: {},
 			cwd: ""
 		}
@@ -180,7 +165,7 @@ var ShellShock = {
 			navPath: "/shellshock/2/4"
 		},
 		acceptanceCriteria: {
-			history: {},
+			history: ["ls -l"],
 			structure: {},
 			cwd: ""
 		}
@@ -204,7 +189,7 @@ var ShellShock = {
 			navPath: "/shellshock/3/1"
 		},
 		acceptanceCriteria: {
-			history: {},
+			history: [],
 			structure: {},
 			cwd: ""
 		}
@@ -228,7 +213,7 @@ var ShellShock = {
 			navPath: "/shellshock/3/2"
 		},
 		acceptanceCriteria: {
-			history: {},
+			history: ["cd MyDirectory", "pwd", "ls"],
 			structure: {},
 			cwd: ""
 		}
@@ -252,7 +237,7 @@ var ShellShock = {
 			navPath: "/shellshock/3/3"
 		},
 		acceptanceCriteria: {
-			history: {},
+			history: ["cd .."],
 			structure: {},
 			cwd: ""
 		}
@@ -273,10 +258,10 @@ var ShellShock = {
 				"Moving up and down the file tree one directory at a time is pretty cool. While it is easy and hard to get lost navigating this way, sometimes we know exactly which directory we want to move to and don’t want to bother with numerous ‘cd’ commands.  We can do so by tagging the ‘cd’ command with the appropriate filepath to the directory.",
 				"You may have noticed that ‘MyDirectory’ had a subdirectory named ‘MySubDir’. Say there is some important info in that directory we want, and we know that’s where we want to navigate.  Use the ‘cd’ command to navigate there directly. (Hint, the filepath for ‘MySubDir’ is ‘root/MyDirectory/MySubDir’.)"
 			],
-			navPath: "/shellshock/4/1"
+			navPath: "/"
 		},
 		acceptanceCriteria: {
-			history: {},
+			history: ["cd MySubDir"],
 			structure: {},
 			cwd: ""
 		}
@@ -300,7 +285,7 @@ var ShellShock = {
 			navPath: "/shellshock/4/2"
 		},
 		acceptanceCriteria: {
-			history: {},
+			history: ["cat file1"],
 			structure: {},
 			cwd: ""
 		}
@@ -348,7 +333,7 @@ var ShellShock = {
 			navPath: "/shellshock/4/4"
 		},
 		acceptanceCriteria: {
-			history: {},
+			history: ["mkdir newdir"],
 			structure: {},
 			cwd: ""
 		}

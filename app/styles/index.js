@@ -87,7 +87,8 @@ var styles = {
 	sidebarChapter: {
 		color: "#FFFFFF",
 		fontSize: 16,
-		textAlign: "center"
+		textAlign: "center",
+		cursor: "pointer"
 	},
 	sidebarComponent: {
 		backgroundColor: "#546E7A",
@@ -106,7 +107,14 @@ var styles = {
 	sidebarLesson: {
 		color: "#FFFFFF",
 		fontSize: 12,
-		textAlign: "center"
+		textAlign: "center",
+		cursor: "pointer"
+	},
+	sidebarLessonActive: {
+		color: "#F8E71C",
+		fontSize: 12,
+		textAlign: "center",
+		cursor: "pointer"
 	},
 	sidebarList: {
 		textAlign: "center",
@@ -133,12 +141,15 @@ var styles = {
 	},
 	terminalEvalTextFailing: {
 		marginTop: 20,
-		color: "#ff1c1c"
+		color: "#ff1c1c",
+		background: "#ffffff",
+		borderRadius: 15,
 	},
 	terminalEvalTextPassing: {
 		marginTop: 20,
 		color: "#21ce3d",
-		background: "#ffffff"
+		background: "#ffffff",
+		borderRadius: 15,
 	},
 	title: {
 		fontSize: 48,
