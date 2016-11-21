@@ -22,6 +22,7 @@ var Lesson = React.createClass({
        return { 
        	showDirectionsButton : true,
        	showTerminalButton : false,
+  		showEvalText: false,
        	bodyIndex : 0,
        	evaluationText: "",
        	fileTreeStructure: {
@@ -60,7 +61,7 @@ var Lesson = React.createClass({
 					<FileTree structure={this.state.fileTreeStructure} cwd={this.state.cwd}/>
 				</div>
 				<div className="col-sm-4 col-sm-offset-1" style={directionsContainer}>
-					<Directions onClick={this.handleDirectionsClick} number={material.directions.number} title={material.directions.title} body={material.directions.body[this.state.bodyIndex]} navPath={material.directions.navPath} showButton={this.state.showDirectionsButton}/>
+					<Directions onClick={this.handleDirectionsClick} number={material.directions.number} title={material.directions.title} body={material.directions.body[this.state.bodyIndex]} navPath={material.directions.navPath} showButton={this.state.showDirectionsButton} showText={true} evalText={this.state.evaluationText} helpClick={this.handleTerminalClick} passingCriteria={passingCriteria}/>
 				</div>
 			</div>
 		)
@@ -82,7 +83,6 @@ var Lesson = React.createClass({
 		this.forceUpdate();	
  	},
  	handleTerminalClick: function(e, terminal) {
- 		console.log(terminal.cwd);
  		this.state.fileTreeStructure = terminal.structure;
  		this.state.cwd = terminal.cwd;
  		
@@ -136,6 +136,7 @@ var Lesson = React.createClass({
 
  		if (passingCriteria) {
  			this.state.showDirectionsButton = true;
+ 			this.state.showEvalText = true;
  		}
 
  		this.forceUpdate();

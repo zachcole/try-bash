@@ -59,13 +59,21 @@ var styles = {
 		backgroundColor: "#80CBC4",
 		height: "40vh"
 	},
+	fileTreeChild: {
+		textAlign: "center"
+	},
 	fileTreeComponent: {
 		backgroundColor: "#80CBC4",
-		height: "40vh"
+		height: "40vh",
+		textAlign: "center",
+		borderRadius: 15,
+		border: "10px solid #979797",
+		marginTop: 10
 	},
 	fileTreeLogo: {
 		width: 30,
-		height: 35
+		height: 35,
+		textAlign: "center"
 	},
 	homeBackground: {
 		backgroundColor: '#009688',
@@ -110,23 +118,27 @@ var styles = {
 		marginTop: 0,
 		paddingTop: 30,
 		textAlign: "center",
-		color: "#FFFFFF"
+		color: "#FFFFFF",
+		fontFamily: "Andale Mono"
 	},
 	sidebarLesson: {
 		color: "#FFFFFF",
 		fontSize: 12,
 		textAlign: "center",
-		cursor: "pointer"
+		cursor: "pointer",
+		fontFamily: "Andale Mono"
 	},
 	sidebarLessonActive: {
 		color: "#F8E71C",
 		fontSize: 12,
 		textAlign: "center",
-		cursor: "pointer"
+		cursor: "pointer",
+		fontFamily: "Andale Mono"
 	},
 	sidebarList: {
 		textAlign: "center",
-		color: "#FFFFFF"
+		color: "#FFFFFF",
+		fontFamily: "Andale Mono"
 	},
 	terminalButton: {
 		textAlign: "center",
@@ -134,7 +146,8 @@ var styles = {
 		border: "1px solid #009688",
 		color: "#009688",
 		textAlign: "center",
-		marginTop: 30
+		marginTop: 20,
+		marginBottom: 10
 	},
 	terminalComponent: {
 		backgroundColor: "#00695C",
@@ -148,16 +161,16 @@ var styles = {
 		padding: 0
 	},
 	terminalEvalTextFailing: {
-		marginTop: 20,
 		color: "#ff1c1c",
-		background: "#ffffff",
-		borderRadius: 15,
+		position: "absolute",
+		bottom: 60,
+		textAlign: "center"
 	},
 	terminalEvalTextPassing: {
-		marginTop: 20,
 		color: "#21ce3d",
-		background: "#ffffff",
-		borderRadius: 15,
+		position: "absolute",
+		bottom: 60,
+		textAlign: "center"
 	},
 	title: {
 		fontSize: 48,

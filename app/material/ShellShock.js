@@ -16,7 +16,7 @@ var ShellShock = {
 			title: "The Workspace",
 			body: [
 				"Welcome to Shell Shock! In this course, you will learn the absolute basics of the Linux shell bash.  No prior experience is required to complete this course.  Press next to get started!",
-				"Before we get started, let’s get familiar with the workspace.  This canvas is where you will read all of the information provided throughout the course.  It is also where you will see visual representations of exercises.  You will also notice the fancy window to your left.  This is your terminal, but more on that in a moment.  You'll notice the next button that you clicked to get here disappeared.  This is because in the second portion of each lesson, you must pass the exercise to move on.  For this lesson, just press the white submit button below the terminal. You can always come back to this lesson if you forget where something is. Let’s get started!"
+				"Before we get started, let’s get familiar with the workspace.  This canvas is where you will read all of the information provided throughout the course.  You will also notice two windows to the left of this one.  The top is your terminal, but more on that in a moment.  The bottom is where you will see visual representations of your work.  You'll notice the next button that you clicked to get here disappeared.  This is because in the second portion of each lesson, you must pass the exercise to move on.  For this lesson, just press the enter key in the terminal window. You can always come back to this lesson if you forget where something is. Let’s get started!"
 			],
 			navPath: "/shellshock/1/1"
 		},
@@ -40,7 +40,7 @@ var ShellShock = {
 			title: "Command Line and Shell",
 			body: [
 				"The term ‘command line’ is often used when referencing what we call the shell. The shell is a program that intakes keyboard input and and outputs a command to be performed on the operating system.",
-				"Most Linux and Mac operating systems come loaded with a shell called bash. Other than sounding cool, the name of the shell has a bit of history. Steve Bourne developed a shell program called sh for the original Unix operating system.  Thus, bash is actually an acronym for “Bourne Again SHell”, implying the enhancement to Bourne’s original work. 	"
+				"Most Linux and Mac operating systems come loaded with a shell called bash. Other than sounding cool, the name of the shell has a bit of history. Steve Bourne developed a shell program called sh for the original Unix operating system.  Thus, bash is actually an acronym for “Bourne Again SHell”, implying the enhancement to Bourne’s original work.  Press enter once again to move on."
 			],
 			navPath: "/shellshock/1/2"
 		},
@@ -160,7 +160,7 @@ var ShellShock = {
 			title: "Directory Deep Dive",
 			body: [
 				"Now we can see everything that is in our root directory. Awesome! You will notice that files have the proper extension (ex. .txt) but directories have none.  How did I know that so fast? Well, with practice.  But we also use the ‘-l’ tag on the ‘ls’ command to get even more information about what is contained in our working directory.",
-				"Run ‘ls -l’ in the terminal.  You’ll notice that you get the same output, but with a bunch of random dashes and letters in front of each item.  These letters denote what we can do with each file. Each letter denotes a permission, and we will learn more about them in the next lesson."
+				"Run ‘ls -l’ in the terminal.  You’ll notice that you get the same output, but with a bunch of random dashes and letters in front of each item.  These letters denote what we can do with each file. Each letter denotes a permission, and we will learn more about them in the next lesson. (Note: permission are not yet implemented)"
 			],
 			navPath: "/shellshock/2/4"
 		},
@@ -183,7 +183,7 @@ var ShellShock = {
 			number: "2.4",
 			title: "Understanding Basic Permissions",
 			body: [
-				"What do these crazy letters mean? Let’s break it down into the groups. There are 10 characters present.  The first character denotes whether the entry is a file or directory. A file is denoted by ‘-’ while a directory is denoted with ‘d’. The next three characters represent permissions for the entry’s owner, the following three represent permissions for the entry’s group, and the final three represente permissions for everybody else.  These groups of three are broken down into different permissions.  The first is ‘r’ which represents read permissions. ‘w’ represents write permissions. ‘x’ represents an executable file. If there is a ‘-’ in place of any of these letters, that means those permissions are denied.  This is a good concept to understand as begin traversing and manipulating directories.",
+				"What do these crazy letters mean? Let’s break it down into the groups. There are 10 characters present.  The first character denotes whether the entry is a file or directory. A file is denoted by ‘-’ while a directory is denoted with ‘d’. The next three characters represent permissions for the entry’s owner, the following three represent permissions for the entry’s group, and the final three represente permissions for everybody else.  These groups of three are broken down into different permissions.  The first is ‘r’ which represents read permissions. ‘w’ represents write permissions. ‘x’ represents an executable file. If there is a ‘-’ in place of any of these letters, that means those permissions are denied.  This is a good concept to understand as begin traversing and manipulating directories. (Note: permission are not yet implemented)",
 				"Run the ‘ls -l’ command in the terminal again to check out the permissions in our working directory."
 			],
 			navPath: "/shellshock/3/1"

@@ -57,8 +57,6 @@ var Terminal = React.createClass({
 		return (
 			<div style={terminalComponent} onSubmit={this.handleClick}>
                 {this.state.terminal}
-                {this.props.showButton ? <button className="btn btn-primary" onClick={this.handleClick} style={terminalButton}>Submit</button> : null}
-                <p style={this.props.passingCriteria ? terminalEvalTextPassing : terminalEvalTextFailing}>{this.props.evaluationText}</p>
 			</div>
 		)
 	},
