@@ -59,6 +59,14 @@ var styles = {
 		backgroundColor: "#80CBC4",
 		height: "40vh"
 	},
+	fileTreeComponent: {
+		backgroundColor: "#80CBC4",
+		height: "40vh"
+	},
+	fileTreeLogo: {
+		width: 30,
+		height: 35
+	},
 	homeBackground: {
 		backgroundColor: '#009688',
 		marginBottom: 0,
@@ -130,7 +138,7 @@ var styles = {
 	},
 	terminalComponent: {
 		backgroundColor: "#00695C",
-		height: "70vh",
+		height: "40vh",
 		textAlign: "center",
 		marginTop: 30,
 		borderRadius: 15,

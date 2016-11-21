@@ -23,7 +23,27 @@ var Lesson = React.createClass({
        	showDirectionsButton : true,
        	showTerminalButton : false,
        	bodyIndex : 0,
-       	evaluationText: ""
+       	evaluationText: "",
+       	fileTreeStructure: {
+	       	'.hidden': {
+		        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
+		        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+		        dir2: {
+		            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+		        },
+		        '.secrets': { content: 'I\'m still afraid of the dark...' },
+		    },
+		    MyDirectory: {
+		        file1: { content: 'The is the content for file1 in the <public> directory.' },
+		        file2: { content: 'The is the content for file2 in the <public> directory.' },
+		        file3: { content: 'The is the content for file3 in the <public> directory.' },
+		        MySubDir: {
+		            subfile: {content: "This is a nested file."}
+		        }
+		    },
+		    'README.md': { content: '✌⊂(✰‿✰)つ✌ Thanks for checking out the tool! There is a lot that you can do with react-bash and I\'m excited to see all of the fun commands and projects build on top of it!' },
+       	},
+       	cwd: ""
        };
     },
 	render: function () {
@@ -37,6 +57,7 @@ var Lesson = React.createClass({
 				</div>
 				<div className="col-sm-4 col-sm-offset-1" style={terminalEditorContainer}>
 					<Terminal onClick={this.handleTerminalClick} material={material.terminal} showButton={this.state.showTerminalButton} passingCriteria={passingCriteria} evaluationText={this.state.evaluationText}/>
+					<FileTree structure={this.state.fileTreeStructure} cwd={this.state.cwd}/>
 				</div>
 				<div className="col-sm-4 col-sm-offset-1" style={directionsContainer}>
 					<Directions onClick={this.handleDirectionsClick} number={material.directions.number} title={material.directions.title} body={material.directions.body[this.state.bodyIndex]} navPath={material.directions.navPath} showButton={this.state.showDirectionsButton}/>
@@ -61,7 +82,9 @@ var Lesson = React.createClass({
 		this.forceUpdate();	
  	},
  	handleTerminalClick: function(e, terminal) {
- 		console.log("before");
+ 		console.log(terminal.cwd);
+ 		this.state.fileTreeStructure = terminal.structure;
+ 		this.state.cwd = terminal.cwd;
  		
  		// console.log(JSON.stringify(terminal.history));	
  		console.log("after");
