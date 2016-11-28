@@ -170,7 +170,8 @@ var styles = {
 		color: "#21ce3d",
 		position: "absolute",
 		bottom: 60,
-		textAlign: "center"
+		textAlign: "center",
+		marginLeft: 110
 	},
 	title: {
 		fontSize: 48,

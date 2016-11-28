@@ -4,8 +4,6 @@ var testing = require('zach-bash');
 var ReactBash = require('zach-bash').default;
 var Link = require('react-router').Link;
 var terminalButton = require('../styles').terminalButton;
-var terminalEvalTextPassing = require('../styles').terminalEvalTextPassing;
-var terminalEvalTextFailing = require('../styles').terminalEvalTextFailing;
 
 
 const extensions = {
