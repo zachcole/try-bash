@@ -56,6 +56,10 @@ var FileTree = React.createClass({
         				</div>
         			) 
       			})}
+
+				{console.log(this.props)}
+      			<p>{this.props.fileName == "" ? null : this.props.fileName}</p>
+      			<p>{this.props.fileContent == "" ? null : this.props.fileContent}</p>
 			</div>
 		)
 	}

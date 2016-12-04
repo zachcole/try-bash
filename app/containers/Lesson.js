@@ -46,7 +46,9 @@ var Lesson = React.createClass({
 		    },
 		    'README.md': { content: '✌⊂(✰‿✰)つ✌ Thanks for checking out the tool! There is a lot that you can do with react-bash and I\'m excited to see all of the fun commands and projects build on top of it!' },
        	},
-       	cwd: ""
+       	cwd: "",
+       	fileName: "",
+       	fileContent: "",
        };
     },
     componentDidMount(){
@@ -63,7 +65,7 @@ var Lesson = React.createClass({
 				</div>
 				<div className="col-sm-4 col-sm-offset-1" style={terminalEditorContainer}>
 					<Terminal refInput={this.setInputFocus} onClick={this.handleTerminalClick} material={material.terminal} showButton={this.state.showTerminalButton} passingCriteria={passingCriteria} evaluationText={this.state.evaluationText}/>
-					<FileTree structure={this.state.fileTreeStructure} cwd={this.state.cwd}/>
+					<FileTree structure={this.state.fileTreeStructure} cwd={this.state.cwd} fileName={this.state.fileName} fileContent={this.state.fileContent}/>
 				</div>
 				<div className="col-sm-4 col-sm-offset-1" style={directionsContainer}>
 					<Directions onClick={this.handleDirectionsClick} number={material.directions.number} title={material.directions.title} body={material.directions.body[this.state.bodyIndex]} navPath={material.directions.navPath} showButton={this.state.showDirectionsButton} showText={true} evalText={this.state.evaluationText} helpClick={this.handleTerminalClick} passingCriteria={passingCriteria}/>
@@ -96,10 +98,21 @@ var Lesson = React.createClass({
  	handleTerminalClick: function(e, terminal) {
  		this.state.fileTreeStructure = terminal.structure;
  		this.state.cwd = terminal.cwd;
+
+ 		// console.log(terminal.history[terminal.history.length - 2].value.substring(0,3));
+ 		// console.log(terminal.history[terminal.history.length - 1].value.substring(0,5));
+ 		// Check to see if the cat command was called on a valid file.
+ 		if (terminal.history[terminal.history.length - 2].value.substring(0,3) == "cat" && terminal.history[terminal.history.length - 1].value.substring(0,5) != "-bash") {
+ 			this.state.fileName = terminal.history[terminal.history.length - 2].value.substring(4);
+ 			this.state.fileContent = terminal.history[terminal.history.length - 1].value;
+ 		} else {
+ 			this.state.fileName = "";
+ 			this.state.fileContent = "";
+ 		}
+
+ 		console.log(this.state);
  		
  		// console.log(JSON.stringify(terminal.history));	
- 		console.log("after");
- 		console.log(globalMaterial.acceptanceCriteria.structure);
  		if (globalMaterial.acceptanceCriteria.history.length === 0 && this.isEmpty(globalMaterial.acceptanceCriteria.structure) && globalMaterial.acceptanceCriteria.cwd === "") {
  			this.state.showTerminalButton = true;
  			passingCriteria = true;
