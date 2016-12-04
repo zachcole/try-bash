@@ -9,6 +9,7 @@ var sidebarContainer = require('../styles').sidebarContainer;
 var terminalEditorContainer = require('../styles').terminalEditorContainer;
 var directionsContainer = require('../styles').directionsContainer;
 var browserHistory = require('react-router').browserHistory; 
+var ReactDOM = require('react-dom');
 
 var testString = "test";
 var showDirectionsButton = true;
@@ -16,6 +17,7 @@ var showTerminalButton = false;
 
 var globalMaterial;
 var passingCriteria = false;
+var inputFocus;
 
 var Lesson = React.createClass({
 	getInitialState : function() {
@@ -47,6 +49,9 @@ var Lesson = React.createClass({
        	cwd: ""
        };
     },
+    componentDidMount(){
+        ReactDOM.findDOMNode(this.refs.term).focus(); 
+    },
 	render: function () {
 		var material = this.props.route.material;
 		globalMaterial = this.props.route.material;
@@ -57,7 +62,7 @@ var Lesson = React.createClass({
 					<Sidebar onClick={this.handleSidebarClick} list={material.sidebar.list} title={material.sidebar.title} active={material.directions.number + " " + material.directions.title}/>
 				</div>
 				<div className="col-sm-4 col-sm-offset-1" style={terminalEditorContainer}>
-					<Terminal onClick={this.handleTerminalClick} material={material.terminal} showButton={this.state.showTerminalButton} passingCriteria={passingCriteria} evaluationText={this.state.evaluationText}/>
+					<Terminal refInput={this.setInputFocus} onClick={this.handleTerminalClick} material={material.terminal} showButton={this.state.showTerminalButton} passingCriteria={passingCriteria} evaluationText={this.state.evaluationText}/>
 					<FileTree structure={this.state.fileTreeStructure} cwd={this.state.cwd}/>
 				</div>
 				<div className="col-sm-4 col-sm-offset-1" style={directionsContainer}>
@@ -65,6 +70,10 @@ var Lesson = React.createClass({
 				</div>
 			</div>
 		)
+	},
+	setInputFocus: function(input) {
+		inputFocus = input;
+		console.log(inputFocus);
 	},
 	handleDirectionsClick: function(navPath) {
 		if (this.state.showTerminalButton) { 
@@ -80,6 +89,8 @@ var Lesson = React.createClass({
 			this.state.bodyIndex = 1;
 			this.state.showDirectionsButton = false;
 		}
+
+		ReactDOM.findDOMNode(inputFocus).focus();
 		this.forceUpdate();	
  	},
  	handleTerminalClick: function(e, terminal) {
@@ -149,6 +160,7 @@ var Lesson = React.createClass({
 		this.state.bodyIndex = 0;
 		passingCriteria = false;
 		this.state.evaluationText = "";
+		ReactDOM.findDOMNode(inputFocus).focus();
  		this.forceUpdate();
  	},
  	// componentDidUpdate() {

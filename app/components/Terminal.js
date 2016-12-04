@@ -5,7 +5,6 @@ var ReactBash = require('zach-bash').default;
 var Link = require('react-router').Link;
 var terminalButton = require('../styles').terminalButton;
 
-
 const extensions = {
     sudo: {
         exec: function(object) {
@@ -60,6 +59,7 @@ var Terminal = React.createClass({
 	},
     handleClick: function () {
         this.props.onClick(this, testBash.type.currentState);
+        this.props.refInput(this.refs.term.refs.input);
     }
 });
 
