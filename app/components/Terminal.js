@@ -47,7 +47,7 @@ var Terminal = React.createClass({
     getInitialState: function() {
         {console.log(this.props)}
         return {
-             terminal: <ReactBash extensions={extensions} structure={structure} history={this.props.material.history} theme="green" prefix={this.props.material.prefix}/>,
+             terminal: <ReactBash ref="term" extensions={extensions} structure={structure} history={this.props.material.history} theme="green" prefix={this.props.material.prefix}/>,
         };
     },
 	render: function () {
