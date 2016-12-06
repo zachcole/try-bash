@@ -43,23 +43,30 @@ var FileTree = React.createClass({
 		var currentDirKeys = Object.keys(currentStructure);
 		return (
 			<div style={fileTreeComponent}>
-				<div>
-					<p>Current Working Directory</p>
-					<img src={FolderLogo} />
-					<p>{this.props.cwd === "" ? "root" : currentDir}</p>
-				</div>
-				{currentDirKeys.map(function(listValue, index){
-        			return(
-        				<div className="col-sm-2" style={fileTreeChild}>
-        					<img src={currentStructure[listValue].hasOwnProperty('content') ? FileLogo : FolderLogo} style={fileTreeLogo} />
-        					<p>{listValue}</p>
-        				</div>
-        			) 
-      			})}
+				<div className="row">
+					<div>
+						<p>Current Working Directory</p>
+						<img src={FolderLogo} />
+						<p>{this.props.cwd === "" ? "root" : currentDir}</p>
+					</div>
+					{currentDirKeys.map(function(listValue, index){
+	        			return(
+	        				<div className="col-sm-2" style={fileTreeChild}>
+	        					<img src={currentStructure[listValue].hasOwnProperty('content') ? FileLogo : FolderLogo} style={fileTreeLogo} />
+	        					<p>{listValue}</p>
+	        				</div>
+	        			) 
+	      			})}
+	      		</div>
 
-				{console.log(this.props)}
-      			<p>{this.props.fileName == "" ? null : this.props.fileName}</p>
-      			<p>{this.props.fileContent == "" ? null : this.props.fileContent}</p>
+	      		{this.props.fileName == "" ? null :
+				<div className="row">
+					{console.log(this.props)}
+					<img src={FileLogo}/>
+	      			<p>{this.props.fileName}</p>
+	      			<p>{this.props.fileContent}</p>
+      			</div>
+      			}	
 			</div>
 		)
 	}

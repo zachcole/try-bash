@@ -51,9 +51,6 @@ var Lesson = React.createClass({
        	fileContent: "",
        };
     },
-    componentDidMount(){
-        ReactDOM.findDOMNode(this.refs.term).focus(); 
-    },
 	render: function () {
 		var material = this.props.route.material;
 		globalMaterial = this.props.route.material;
@@ -64,16 +61,17 @@ var Lesson = React.createClass({
 					<Sidebar onClick={this.handleSidebarClick} list={material.sidebar.list} title={material.sidebar.title} active={material.directions.number + " " + material.directions.title}/>
 				</div>
 				<div className="col-sm-4 col-sm-offset-1" style={terminalEditorContainer}>
+					<Directions onClick={this.handleDirectionsClick} number={material.directions.number} title={material.directions.title} body={material.directions.body[this.state.bodyIndex]} navPath={material.directions.navPath} showButton={this.state.showDirectionsButton} showText={true} evalText={this.state.evaluationText} helpClick={this.handleTerminalClick} passingCriteria={passingCriteria}/>
 					<Terminal refInput={this.setInputFocus} onClick={this.handleTerminalClick} material={material.terminal} showButton={this.state.showTerminalButton} passingCriteria={passingCriteria} evaluationText={this.state.evaluationText}/>
-					<FileTree structure={this.state.fileTreeStructure} cwd={this.state.cwd} fileName={this.state.fileName} fileContent={this.state.fileContent}/>
 				</div>
 				<div className="col-sm-4 col-sm-offset-1" style={directionsContainer}>
-					<Directions onClick={this.handleDirectionsClick} number={material.directions.number} title={material.directions.title} body={material.directions.body[this.state.bodyIndex]} navPath={material.directions.navPath} showButton={this.state.showDirectionsButton} showText={true} evalText={this.state.evaluationText} helpClick={this.handleTerminalClick} passingCriteria={passingCriteria}/>
+					<FileTree structure={this.state.fileTreeStructure} cwd={this.state.cwd} fileName={this.state.fileName} fileContent={this.state.fileContent}/>
 				</div>
 			</div>
 		)
 	},
 	setInputFocus: function(input) {
+		console.log("testing testing");
 		inputFocus = input;
 		console.log(inputFocus);
 	},
@@ -92,7 +90,10 @@ var Lesson = React.createClass({
 			this.state.showDirectionsButton = false;
 		}
 
-		ReactDOM.findDOMNode(inputFocus).focus();
+		if (inputFocus != null) {
+			ReactDOM.findDOMNode(inputFocus).focus();
+		}
+		
 		this.forceUpdate();	
  	},
  	handleTerminalClick: function(e, terminal) {
@@ -102,7 +103,7 @@ var Lesson = React.createClass({
  		// console.log(terminal.history[terminal.history.length - 2].value.substring(0,3));
  		// console.log(terminal.history[terminal.history.length - 1].value.substring(0,5));
  		// Check to see if the cat command was called on a valid file.
- 		if (terminal.history[terminal.history.length - 2].value.substring(0,3) == "cat" && terminal.history[terminal.history.length - 1].value.substring(0,5) != "-bash") {
+ 		if (terminal.history.length > 1 && terminal.history[terminal.history.length - 2].value.substring(0,3) == "cat" && terminal.history[terminal.history.length - 1].value.substring(0,5) != "-bash") {
  			this.state.fileName = terminal.history[terminal.history.length - 2].value.substring(4);
  			this.state.fileContent = terminal.history[terminal.history.length - 1].value;
  		} else {
@@ -173,7 +174,9 @@ var Lesson = React.createClass({
 		this.state.bodyIndex = 0;
 		passingCriteria = false;
 		this.state.evaluationText = "";
-		ReactDOM.findDOMNode(inputFocus).focus();
+		if (inputFocus != null) {
+			ReactDOM.findDOMNode(inputFocus).focus();
+		}
  		this.forceUpdate();
  	},
  	// componentDidUpdate() {

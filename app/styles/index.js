@@ -31,15 +31,16 @@ var styles = {
 		position: "absolute",
 		bottom: 0,
 		marginLeft: -20	,
-		marginBottom: 30
+		marginBottom: 10
 	},
 	directionsComponent: {
-		backgroundColor: "#E0F2F1",
-		height: "82vh",
+		backgroundColor: "#80CBC4",
+		height: "40vh",
 		textAlign: "center",
 		borderRadius: 15,
 		border: "10px solid #979797",
-		position: "relative"
+		marginTop: 10,
+		position: "relative",
 	},
 	directionsContainer: {
 		paddingTop: 30,
@@ -63,12 +64,15 @@ var styles = {
 		textAlign: "center"
 	},
 	fileTreeComponent: {
-		backgroundColor: "#80CBC4",
-		height: "40vh",
+		backgroundColor: "#E0F2F1",
+		height: "82vh",
 		textAlign: "center",
 		borderRadius: 15,
 		border: "10px solid #979797",
-		marginTop: 10
+		position: "relative",
+		paddingLeft: 20,
+		paddingRight: 20,
+		paddingTop: 20
 	},
 	fileTreeLogo: {
 		width: 30,
