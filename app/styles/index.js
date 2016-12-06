@@ -54,14 +54,18 @@ var styles = {
 		textAlign: "center"
 	},
 	directionsTitle: {
-		textAlign: "center"
+		textAlign: "center",
+		fontSize: 16
 	},
 	editorComponent: {
 		backgroundColor: "#80CBC4",
 		height: "40vh"
 	},
 	fileTreeChild: {
-		textAlign: "center"
+		display: "inline-block",
+		float: "none",
+		textAlign: "center",
+		marginRight: "-4px"
 	},
 	fileTreeComponent: {
 		backgroundColor: "#E0F2F1",
@@ -76,8 +80,7 @@ var styles = {
 	},
 	fileTreeLogo: {
 		width: 30,
-		height: 35,
-		textAlign: "center"
+		height: 35
 	},
 	homeBackground: {
 		backgroundColor: '#009688',

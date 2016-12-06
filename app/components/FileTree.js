@@ -43,15 +43,15 @@ var FileTree = React.createClass({
 		var currentDirKeys = Object.keys(currentStructure);
 		return (
 			<div style={fileTreeComponent}>
-				<div className="row">
+				<div className="row" style={{textAlign: "center"}}>
 					<div>
-						<p>Current Working Directory</p>
+						<p style={{fontSize: 26}}>Current Working Directory</p>
 						<img src={FolderLogo} />
 						<p>{this.props.cwd === "" ? "root" : currentDir}</p>
 					</div>
 					{currentDirKeys.map(function(listValue, index){
 	        			return(
-	        				<div className="col-sm-2" style={fileTreeChild}>
+	        				<div className="col-sm-3" style={fileTreeChild}>
 	        					<img src={currentStructure[listValue].hasOwnProperty('content') ? FileLogo : FolderLogo} style={fileTreeLogo} />
 	        					<p>{listValue}</p>
 	        				</div>
@@ -59,7 +59,7 @@ var FileTree = React.createClass({
 	      			})}
 	      		</div>
 
-	      		{this.props.fileName == "" ? null :
+	      		{this.props.fileName === "" ? null :
 				<div className="row">
 					{console.log(this.props)}
 					<img src={FileLogo}/>
