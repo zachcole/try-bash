@@ -12,21 +12,17 @@ var browserHistory = require('react-router').browserHistory;
 var ReactDOM = require('react-dom');
 
 var testString = "test";
-var showDirectionsButton = true;
-var showTerminalButton = false;
+var showDirectionsButton = false;
 
 var globalMaterial;
 var passingCriteria = false;
 var inputFocus;
-var reRender = true;
 
 var Lesson = React.createClass({
 	getInitialState : function() {
        return { 
-       	showDirectionsButton : true,
-       	showTerminalButton : false,
+       	showDirectionsButton : false,
   		showEvalText: false,
-       	bodyIndex : 0,
        	evaluationText: "",
        	fileTreeStructure: this.props.route.material.terminal.structure,
        	cwd: "",
@@ -48,7 +44,7 @@ var Lesson = React.createClass({
 					<Sidebar onClick={this.handleSidebarClick} list={material.sidebar.list} title={material.sidebar.title} active={material.directions.number + " " + material.directions.title}/>
 				</div>
 				<div className="col-sm-4 col-sm-offset-1" style={terminalEditorContainer}>
-					<Directions onClick={this.handleDirectionsClick} number={material.directions.number} title={material.directions.title} body={material.directions.body[this.state.bodyIndex]} navPath={material.directions.navPath} showButton={this.state.showDirectionsButton} showText={true} evalText={this.state.evaluationText} helpClick={this.handleTerminalClick} passingCriteria={passingCriteria}/>
+					<Directions onClick={this.handleDirectionsClick} number={material.directions.number} title={material.directions.title} body={material.directions.body} navPath={material.directions.navPath} showButton={this.state.showDirectionsButton} showText={true} evalText={this.state.evaluationText} helpClick={this.handleTerminalClick} passingCriteria={passingCriteria} lastInChapter={material.directions.lastInChapter}/>
 					<Terminal lessonNumber={material.directions.number} refInput={this.setInputFocus} onClick={this.handleTerminalClick} material={this.props.route.material.terminal} showButton={false} passingCriteria={passingCriteria} evaluationText={""} defaultHistory={[]}/>
 				</div>
 				<div className="col-sm-4 col-sm-offset-1" style={directionsContainer}>
@@ -62,32 +58,22 @@ var Lesson = React.createClass({
 		inputFocus = input;
 	},
 	handleDirectionsClick: function(navPath) {
-		var showTerminalButton;
-		var bodyIndex;
 		var evaluationText;
 		var showDirectionsButton;
-		if (this.state.showTerminalButton) { 
-			if (passingCriteria) {
-				this.props.history.push(navPath);
-				showTerminalButton = false;
-				bodyIndex = 0;
-				passingCriteria = false;
-				evaluationText = "";
-			}
-		} else {
-			showTerminalButton = true;
-			bodyIndex = 1;
+		
+		if (passingCriteria) {
+			this.props.history.push(navPath);
+			passingCriteria = false;
+			evaluationText = "";
 			showDirectionsButton = false;
 		}
+		
 
 		if (inputFocus != null) {
 			ReactDOM.findDOMNode(inputFocus).focus();
 		}
 		
-		reRender = true;
 		this.setState({
-			showTerminalButton: showTerminalButton,
-			bodyIndex: bodyIndex,
 			evaluationText: evaluationText,
 			showDirectionsButton: showDirectionsButton
 		})
@@ -111,12 +97,10 @@ var Lesson = React.createClass({
  			fileContent = "";
  		}
 
- 		var showTerminalButton;
  		var evaluationText;
  		
  		// console.log(JSON.stringify(terminal.history));	
  		if (globalMaterial.acceptanceCriteria.history.length === 0 && this.isEmpty(globalMaterial.acceptanceCriteria.structure) && globalMaterial.acceptanceCriteria.cwd === "") {
- 			showTerminalButton = true;
  			passingCriteria = true;
  			evaluationText = "Nice! Press next to get started!"
  			
@@ -160,7 +144,7 @@ var Lesson = React.createClass({
  			evaluationText = "Something went wrong. Try again."
  		}
 
- 		var showDirectionsButton;
+ 		var showDirectionsButton = false;
  		var showEvalText;
 
  		if (passingCriteria) {
@@ -168,15 +152,12 @@ var Lesson = React.createClass({
  			showEvalText = true;
  		}
 
- 		reRender = false;
- 		// console.log(terminal.cwd);
  		this.setState({
  			cwd: terminal.cwd,
  			fileTreeStructure: terminal.structure,
  			fileName: fileName,
  			fileContent: fileContent,
  			fileTreeStructure: fileTreeStructure,
- 			showTerminalButton: showTerminalButton,
  			evaluationText: evaluationText,
  			showDirectionsButton: showDirectionsButton,
  			showEvalText: showEvalText
@@ -189,11 +170,8 @@ var Lesson = React.createClass({
 			ReactDOM.findDOMNode(inputFocus).focus();
 		}
 
-		reRender = true;
  		this.setState({
- 			showTerminalButton: false,
- 			showDirectionsButton: true,
- 			bodyIndex: 0,
+ 			showDirectionsButton: false,
  			evaluationText: "",
  		})
  	},

@@ -170,13 +170,13 @@ var styles = {
 	terminalEvalTextFailing: {
 		color: "#ff1c1c",
 		position: "absolute",
-		bottom: 60,
+		bottom: 40,
 		textAlign: "center"
 	},
 	terminalEvalTextPassing: {
-		color: "#21ce3d",
+		color: "#2a8437",
 		position: "absolute",
-		bottom: 60,
+		bottom: 40,
 		textAlign: "center",
 		marginLeft: 110
 	},

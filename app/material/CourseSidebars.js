@@ -57,11 +57,11 @@ var CourseSidebars = {
 				style: lessonStyle,
 				linkPath: "shellshock/2/3"
 			},
-			{
-				title: "2.4 Understanding Basic Permissions",
-				style: lessonStyle,
-				linkPath: "shellshock/2/4"
-			},
+			// {
+			// 	title: "2.4 Understanding Basic Permissions",
+			// 	style: lessonStyle,
+			// 	linkPath: "shellshock/2/4"
+			// },
 			{
 				title: "3. Navigation",
 				style: chapterStyle,

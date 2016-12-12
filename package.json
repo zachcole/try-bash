@@ -17,6 +17,8 @@
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-router": "^2.8.1",
+    "react-share": "^1.11.0",
+    "react-skylight": "^0.4.1",
     "zach-bash": "^1.0.4"
   },
   "scripts": {
