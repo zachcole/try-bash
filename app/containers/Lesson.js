@@ -18,6 +18,7 @@ var showTerminalButton = false;
 var globalMaterial;
 var passingCriteria = false;
 var inputFocus;
+var reRender = true;
 
 var Lesson = React.createClass({
 	getInitialState : function() {
@@ -27,34 +28,20 @@ var Lesson = React.createClass({
   		showEvalText: false,
        	bodyIndex : 0,
        	evaluationText: "",
-       	fileTreeStructure: {
-	       	'.hidden': {
-		        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
-		        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
-		        dir2: {
-		            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
-		        },
-		        '.secrets': { content: 'I\'m still afraid of the dark...' },
-		    },
-		    MyDirectory: {
-		        file1: { content: 'The is the content for file1 in the <public> directory.' },
-		        file2: { content: 'The is the content for file2 in the <public> directory.' },
-		        file3: { content: 'The is the content for file3 in the <public> directory.' },
-		        MySubDir: {
-		            subfile: {content: "This is a nested file."}
-		        }
-		    },
-		    'README.md': { content: '✌⊂(✰‿✰)つ✌ Thanks for checking out the tool! There is a lot that you can do with react-bash and I\'m excited to see all of the fun commands and projects build on top of it!' },
-       	},
+       	fileTreeStructure: this.props.route.material.terminal.structure,
        	cwd: "",
        	fileName: "",
        	fileContent: "",
+       	defaultHistory: []
        };
     },
 	render: function () {
+		console.log(this.props.route.material)
 		var material = this.props.route.material;
 		globalMaterial = this.props.route.material;
-		// console.log(history);
+		// console.log(this.props.route.material.terminal.structure);
+		// console.log("Rendering with the following state");
+		// console.log(this.state);
 		return (
 			<div style={lessonBackground}>
 				<div className="col-sm-2" style={sidebarContainer}>
@@ -62,7 +49,7 @@ var Lesson = React.createClass({
 				</div>
 				<div className="col-sm-4 col-sm-offset-1" style={terminalEditorContainer}>
 					<Directions onClick={this.handleDirectionsClick} number={material.directions.number} title={material.directions.title} body={material.directions.body[this.state.bodyIndex]} navPath={material.directions.navPath} showButton={this.state.showDirectionsButton} showText={true} evalText={this.state.evaluationText} helpClick={this.handleTerminalClick} passingCriteria={passingCriteria}/>
-					<Terminal refInput={this.setInputFocus} onClick={this.handleTerminalClick} material={material.terminal} showButton={this.state.showTerminalButton} passingCriteria={passingCriteria} evaluationText={this.state.evaluationText}/>
+					<Terminal lessonNumber={material.directions.number} refInput={this.setInputFocus} onClick={this.handleTerminalClick} material={this.props.route.material.terminal} showButton={false} passingCriteria={passingCriteria} evaluationText={""} defaultHistory={[]}/>
 				</div>
 				<div className="col-sm-4 col-sm-offset-1" style={directionsContainer}>
 					<FileTree structure={this.state.fileTreeStructure} cwd={this.state.cwd} fileName={this.state.fileName} fileContent={this.state.fileContent}/>
@@ -71,57 +58,71 @@ var Lesson = React.createClass({
 		)
 	},
 	setInputFocus: function(input) {
-		console.log("testing testing");
+		// focus the terminal
 		inputFocus = input;
-		console.log(inputFocus);
 	},
 	handleDirectionsClick: function(navPath) {
+		var showTerminalButton;
+		var bodyIndex;
+		var evaluationText;
+		var showDirectionsButton;
 		if (this.state.showTerminalButton) { 
 			if (passingCriteria) {
 				this.props.history.push(navPath);
-				this.state.showTerminalButton = false;
-				this.state.bodyIndex = 0;
+				showTerminalButton = false;
+				bodyIndex = 0;
 				passingCriteria = false;
-				this.state.evaluationText = "";
+				evaluationText = "";
 			}
 		} else {
-			this.state.showTerminalButton = true;
-			this.state.bodyIndex = 1;
-			this.state.showDirectionsButton = false;
+			showTerminalButton = true;
+			bodyIndex = 1;
+			showDirectionsButton = false;
 		}
 
 		if (inputFocus != null) {
 			ReactDOM.findDOMNode(inputFocus).focus();
 		}
 		
-		this.forceUpdate();	
+		reRender = true;
+		this.setState({
+			showTerminalButton: showTerminalButton,
+			bodyIndex: bodyIndex,
+			evaluationText: evaluationText,
+			showDirectionsButton: showDirectionsButton
+		})
  	},
- 	handleTerminalClick: function(e, terminal) {
- 		this.state.fileTreeStructure = terminal.structure;
- 		this.state.cwd = terminal.cwd;
+ 	handleTerminalClick: function(terminal) {
 
- 		// console.log(terminal.history[terminal.history.length - 2].value.substring(0,3));
- 		// console.log(terminal.history[terminal.history.length - 1].value.substring(0,5));
+ 		// console.log(terminal.history);
+
+ 		
+ 		var fileTreeStructure = terminal.structure;
+ 		
+ 		var fileName;
+ 		var fileContent;
+
  		// Check to see if the cat command was called on a valid file.
  		if (terminal.history.length > 1 && terminal.history[terminal.history.length - 2].value.substring(0,3) == "cat" && terminal.history[terminal.history.length - 1].value.substring(0,5) != "-bash") {
- 			this.state.fileName = terminal.history[terminal.history.length - 2].value.substring(4);
- 			this.state.fileContent = terminal.history[terminal.history.length - 1].value;
+ 			fileName = terminal.history[terminal.history.length - 2].value.substring(4);
+ 			fileContent = terminal.history[terminal.history.length - 1].value;
  		} else {
- 			this.state.fileName = "";
- 			this.state.fileContent = "";
+ 			fileName = "";
+ 			fileContent = "";
  		}
 
- 		console.log(this.state);
+ 		var showTerminalButton;
+ 		var evaluationText;
  		
  		// console.log(JSON.stringify(terminal.history));	
  		if (globalMaterial.acceptanceCriteria.history.length === 0 && this.isEmpty(globalMaterial.acceptanceCriteria.structure) && globalMaterial.acceptanceCriteria.cwd === "") {
- 			this.state.showTerminalButton = true;
+ 			showTerminalButton = true;
  			passingCriteria = true;
- 			this.state.evaluationText = "Nice! Press next to get started!"
+ 			evaluationText = "Nice! Press next to get started!"
  			
  		} else if (globalMaterial.acceptanceCriteria.cwd !== "") {
  			if (globalMaterial.acceptanceCriteria.cwd === terminal.cwd) {
- 				this.state.evaluationText = "Nice work! Press next to keep going!";
+ 				evaluationText = "Nice work! Press next to keep going!";
  				passingCriteria = true;
  			} else {
  				evaluationText = "Keep trying! Looks like you're in th wrong directory";
@@ -141,47 +142,61 @@ var Lesson = React.createClass({
  			});
 
 			if(containsAllElements) {
-				this.state.evaluationText = "Nice work! Press next to keep going!";
+				evaluationText = "Nice work! Press next to keep going!";
 				passingCriteria = true;
 			} else {
-				this.state.evaluationText = "Not quite! Looks like you haven't executed all of the required commands.";
+				evaluationText = "Not quite! Looks like you haven't executed all of the required commands.";
 				passingCriteria = false;
 			}
  		} else if (!this.isEmpty(globalMaterial.acceptanceCriteria.structure)) {
  			if (JSON.stringify(globalMaterial.acceptanceCriteria.structure) === JSON.stringify(terminal.structure)) {
- 				this.state.evaluationText = "Nice work! Press next to keep going!";
+ 				evaluationText = "Nice work! Press next to keep going!";
  				passingCriteria = true;
  			} else {
  				this.state.evaluationText = "Try again! Looks like your file tree doesn't match exactly.";
  				passingCriteria = false;
  			}
  		} else {
- 			this.state.evaluationText = "Something went wrong. Try again."
+ 			evaluationText = "Something went wrong. Try again."
  		}
+
+ 		var showDirectionsButton;
+ 		var showEvalText;
 
  		if (passingCriteria) {
- 			this.state.showDirectionsButton = true;
- 			this.state.showEvalText = true;
+ 			showDirectionsButton = true;
+ 			showEvalText = true;
  		}
 
- 		this.forceUpdate();
+ 		reRender = false;
+ 		// console.log(terminal.cwd);
+ 		this.setState({
+ 			cwd: terminal.cwd,
+ 			fileTreeStructure: terminal.structure,
+ 			fileName: fileName,
+ 			fileContent: fileContent,
+ 			fileTreeStructure: fileTreeStructure,
+ 			showTerminalButton: showTerminalButton,
+ 			evaluationText: evaluationText,
+ 			showDirectionsButton: showDirectionsButton,
+ 			showEvalText: showEvalText
+ 		})
  	},
  	handleSidebarClick: function(navPath) {
- 		console.log(navPath);
  		this.props.history.push(navPath);
- 		this.state.showTerminalButton = false;
- 		this.state.showDirectionsButton = true;
-		this.state.bodyIndex = 0;
 		passingCriteria = false;
-		this.state.evaluationText = "";
 		if (inputFocus != null) {
 			ReactDOM.findDOMNode(inputFocus).focus();
 		}
- 		this.forceUpdate();
+
+		reRender = true;
+ 		this.setState({
+ 			showTerminalButton: false,
+ 			showDirectionsButton: true,
+ 			bodyIndex: 0,
+ 			evaluationText: "",
+ 		})
  	},
- 	// componentDidUpdate() {
-  //       this.render();
-  //   },
     isEmpty: function(obj) {
     	var p;
 	    for (p in obj) {

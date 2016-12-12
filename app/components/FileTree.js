@@ -22,7 +22,6 @@ var FileTree = React.createClass({
 			} else {
 				return obj[array[index]];
 			}
-			
 		} else {
 			return(this.getCwdStructure(obj[array[index]], array, index+1));
 		}
@@ -47,25 +46,36 @@ var FileTree = React.createClass({
 					<div>
 						<p style={{fontSize: 26}}>Current Working Directory</p>
 						<img src={FolderLogo} />
-						<p>{this.props.cwd === "" ? "root" : currentDir}</p>
+						<p style={{fontSize: 18}}>{this.props.cwd === "" ? "root" : currentDir}</p>
 					</div>
-					{currentDirKeys.map(function(listValue, index){
-	        			return(
-	        				<div className="col-sm-3" style={fileTreeChild}>
-	        					<img src={currentStructure[listValue].hasOwnProperty('content') ? FileLogo : FolderLogo} style={fileTreeLogo} />
-	        					<p>{listValue}</p>
-	        				</div>
-	        			) 
-	      			})}
+					<div style={{textAlign: "center", height: 100, overflowY: "auto"}}>
+						{currentDirKeys.map(function(listValue, index){
+		        			return(
+		        				<div className="col-sm-3" style={fileTreeChild}>
+		        					<img src={currentStructure[listValue].hasOwnProperty('content') ? FileLogo : FolderLogo} style={fileTreeLogo} />
+		        					<p>{listValue}</p>
+		        				</div>
+		        			) 
+		      			})}
+	      			</div>
 	      		</div>
 
-	      		{this.props.fileName === "" ? null :
-				<div className="row">
-					{console.log(this.props)}
-					<img src={FileLogo}/>
-	      			<p>{this.props.fileName}</p>
-	      			<p>{this.props.fileContent}</p>
-      			</div>
+	      		<hr style={{background: "#979797", height: "1px"}}/>
+
+	      		<p style={{fontSize: 26}}>File Inspector</p>
+
+	      		{this.props.fileName === "" ? 
+		      		<div>
+		      			<p style={{marginTop: 70}}>Run the 'cat' command on a valid file to check it's content!</p>
+		      		</div>
+		      		 :
+					<div className="row">
+						<img src={FileLogo}/>
+		      			<p>{this.props.fileName}</p>
+		      			<div style={{textAlign: "center", height: 100, overflowY: "auto"}}>
+		      				<p>{this.props.fileContent}</p>
+		      			</div>
+	      			</div>
       			}	
 			</div>
 		)

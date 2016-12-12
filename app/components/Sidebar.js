@@ -13,16 +13,16 @@ var Sidebar = React.createClass({
 		return (
 			<div style={sidebarComponent}>
 				<h3 style={sidebarTitle}>{this.props.title}</h3>
-            	{console.log(this.props)}
       			{this.props.list.map(function(listValue, index){
+      				// console.log(this);
         			return(
-        				<p onClick={handleClick.bind(this, listValue.linkPath)} key={index} style={listValue.title.substring(0, 4) === current.substring(0,4) ? sidebarLessonActive : listValue.style} >{listValue.title}</p>
+        				<p onClick={this.props.onClick.bind(this, listValue.linkPath)} key={index} style={listValue.title.substring(0, 4) === current.substring(0,4) ? sidebarLessonActive : listValue.style} >{listValue.title}</p>
         			) 
-      			})}
+      			}, this)}
        			
 			</div>
 		)
-	}
+	},
 });
 
 module.exports = Sidebar;

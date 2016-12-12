@@ -17,49 +17,35 @@ const extensions = {
     }
 };
 
-const structure = {
-    '.hidden': {
-        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
-        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
-        dir2: {
-            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
-        },
-        '.secrets': { content: 'I\'m still afraid of the dark...' },
-    },
-    MyDirectory: {
-        file1: { content: 'The is the content for file1 in the <public> directory.' },
-        file2: { content: 'The is the content for file2 in the <public> directory.' },
-        file3: { content: 'The is the content for file3 in the <public> directory.' },
-        MySubDir: {
-            subfile: {content: "This is a nested file."}
-        }
-    },
-    'README.md': { content: '✌⊂(✰‿✰)つ✌ Thanks for checking out the tool! There is a lot that you can do with react-bash and I\'m excited to see all of the fun commands and projects build on top of it!' },
-};
-
-var testBash = <ReactBash extensions={extensions} structure={structure} history={history} theme="green"/>;
-var testString = "props to you";
-console.log(testing);
-
-
-
 var Terminal = React.createClass({
-    getInitialState: function() {
-        {console.log(this.props)}
-        return {
-             terminal: <ReactBash ref="term" extensions={extensions} structure={structure} history={this.props.material.history} theme="green" prefix={this.props.material.prefix}/>,
-        };
+    getInitialState : function() {
+       return { 
+            terminal: this.renderTerminal()
+       };
+    },
+    shouldComponentUpdate: function(nextProps, nextState) {
+        if (this.props.lessonNumber !== nextProps.lessonNumber) {
+            return true;
+        } else {
+            return false;
+        }
     },
 	render: function () {
 		return (
 			<div style={terminalComponent} onSubmit={this.handleClick}>
-                {this.state.terminal}
+                {this.renderTerminal()}
 			</div>
 		)
 	},
     handleClick: function () {
-        this.props.onClick(this, testBash.type.currentState);
+        console.log(this.state.terminal.type.currentState);
+        this.props.onClick(this.state.terminal.type.currentState);
         this.props.refInput(this.refs.term.refs.input);
+    },
+    renderTerminal: function() {
+        return(
+            <ReactBash ref="term" extensions={extensions} structure={this.props.material.structure} history={this.props.material.history} theme="green" prefix={this.props.material.prefix}/>
+        )
     }
 });
 

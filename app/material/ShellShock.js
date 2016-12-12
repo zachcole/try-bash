@@ -6,6 +6,24 @@ var ShellShock = {
 		sidebar: shellShockSidebar,
 		terminal: {
 			prefix: "trybash@shellshock",
+			structure: {
+		       	'.hidden': {
+			        file1: { content: 'The is the content for file1 in the <.hidden> directory. intro' },
+			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+			        dir2: {
+			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+			        },
+			        '.secrets': { content: 'I\'m still afraid of the dark...' },
+			    },
+			    MyDirectory: {
+			        file1: { content: 'The is the content for file1 in the <public> directory.' },
+			        file2: { content: 'The is the content for file2 in the <public> directory.' },
+			        file3: { content: 'The is the content for file3 in the <public> directory.' },
+			        MySubDir: {
+			            subfile: {content: "This is a nested file."}
+			 	    }
+		    	}
+		    },
 			// history: [
 			// 	{ value: 'Welcome to ShellShock Introduction!' },
 			// ]
@@ -30,6 +48,24 @@ var ShellShock = {
 		sidebar: shellShockSidebar,
 		terminal: {
 			prefix: "trybash@shellshock",
+			structure: {
+		       	'.hidden': {
+			        file1: { content: 'The is the content for file1 in the <.hidden> directory. lesson 1' },
+			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+			        dir2: {
+			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+			        },
+			        '.secrets': { content: 'I\'m still afraid of the dark...' },
+			    },
+			    MyDirectory: {
+			        file1: { content: 'The is the content for file1 in the <public> directory.' },
+			        file2: { content: 'The is the content for file2 in the <public> directory.' },
+			        file3: { content: 'The is the content for file3 in the <public> directory.' },
+			        MySubDir: {
+			            subfile: {content: "This is a nested file."}
+			 	    }
+		    	}
+		    },
 			// history: [
 			// 	{ value: 'Welcome to ShellShock Lesson 1.1!' },
 			// ]
@@ -54,6 +90,24 @@ var ShellShock = {
 		sidebar: shellShockSidebar,
 		terminal: {
 			prefix: "trybash@shellshock",
+			structure: {
+		       	'.hidden': {
+			        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
+			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+			        dir2: {
+			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+			        },
+			        '.secrets': { content: 'I\'m still afraid of the dark...' },
+			    },
+			    MyDirectory: {
+			        file1: { content: 'The is the content for file1 in the <public> directory.' },
+			        file2: { content: 'The is the content for file2 in the <public> directory.' },
+			        file3: { content: 'The is the content for file3 in the <public> directory.' },
+			        MySubDir: {
+			            subfile: {content: "This is a nested file."}
+			 	    }
+		    	}
+		    },
 			// history: [
 			// 	{ value: 'Welcome to ShellShock Introduction!' },
 			// ]
@@ -78,6 +132,24 @@ var ShellShock = {
 		sidebar: shellShockSidebar,
 		terminal: {
 			prefix: "trybash@shellshock",
+			structure: {
+		       	'.hidden': {
+			        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
+			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+			        dir2: {
+			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+			        },
+			        '.secrets': { content: 'I\'m still afraid of the dark...' },
+			    },
+			    MyDirectory: {
+			        file1: { content: 'The is the content for file1 in the <public> directory.' },
+			        file2: { content: 'The is the content for file2 in the <public> directory.' },
+			        file3: { content: 'The is the content for file3 in the <public> directory.' },
+			        MySubDir: {
+			            subfile: {content: "This is a nested file."}
+			 	    }
+		    	}
+		    },
 			// history: [
 			// 	{ value: 'Welcome to ShellShock Introduction!' },
 			// ]
@@ -102,6 +174,24 @@ var ShellShock = {
 		sidebar: shellShockSidebar,
 		terminal: {
 			prefix: "trybash@shellshock",
+			structure: {
+		       	'.hidden': {
+			        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
+			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+			        dir2: {
+			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+			        },
+			        '.secrets': { content: 'I\'m still afraid of the dark...' },
+			    },
+			    MyDirectory: {
+			        file1: { content: 'The is the content for file1 in the <public> directory.' },
+			        file2: { content: 'The is the content for file2 in the <public> directory.' },
+			        file3: { content: 'The is the content for file3 in the <public> directory.' },
+			        MySubDir: {
+			            subfile: {content: "This is a nested file."}
+			 	    }
+		    	}
+		    },
 			// history: [
 			// 	{ value: 'Welcome to ShellShock Introduction!' },
 			// ]
@@ -126,6 +216,24 @@ var ShellShock = {
 		sidebar: shellShockSidebar,
 		terminal: {
 			prefix: "trybash@shellshock",
+			structure: {
+		       	'.hidden': {
+			        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
+			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+			        dir2: {
+			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+			        },
+			        '.secrets': { content: 'I\'m still afraid of the dark...' },
+			    },
+			    MyDirectory: {
+			        file1: { content: 'The is the content for file1 in the <public> directory.' },
+			        file2: { content: 'The is the content for file2 in the <public> directory.' },
+			        file3: { content: 'The is the content for file3 in the <public> directory.' },
+			        MySubDir: {
+			            subfile: {content: "This is a nested file."}
+			 	    }
+		    	}
+		    },
 			// history: [
 			// 	{ value: 'Welcome to ShellShock Introduction!' },
 			// ]
@@ -150,6 +258,24 @@ var ShellShock = {
 		sidebar: shellShockSidebar,
 		terminal: {
 			prefix: "trybash@shellshock",
+			structure: {
+		       	'.hidden': {
+			        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
+			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+			        dir2: {
+			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+			        },
+			        '.secrets': { content: 'I\'m still afraid of the dark...' },
+			    },
+			    MyDirectory: {
+			        file1: { content: 'The is the content for file1 in the <public> directory.' },
+			        file2: { content: 'The is the content for file2 in the <public> directory.' },
+			        file3: { content: 'The is the content for file3 in the <public> directory.' },
+			        MySubDir: {
+			            subfile: {content: "This is a nested file."}
+			 	    }
+		    	}
+		    },
 			// history: [
 			// 	{ value: 'Welcome to ShellShock Introduction!' },
 			// ]
@@ -173,7 +299,24 @@ var ShellShock = {
 	lesson2_4: {
 		sidebar: shellShockSidebar,
 		terminal: {
-			prefix: "trybash@shellshock",
+			prefix: "trybash@shellshock",structure: {
+		       	'.hidden': {
+			        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
+			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+			        dir2: {
+			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+			        },
+			        '.secrets': { content: 'I\'m still afraid of the dark...' },
+			    },
+			    MyDirectory: {
+			        file1: { content: 'The is the content for file1 in the <public> directory.' },
+			        file2: { content: 'The is the content for file2 in the <public> directory.' },
+			        file3: { content: 'The is the content for file3 in the <public> directory.' },
+			        MySubDir: {
+			            subfile: {content: "This is a nested file."}
+			 	    }
+		    	}
+		    },
 			// history: [
 			// 	{ value: 'Welcome to ShellShock Introduction!' },
 			// ]
@@ -198,6 +341,24 @@ var ShellShock = {
 		sidebar: shellShockSidebar,
 		terminal: {
 			prefix: "trybash@shellshock",
+			structure: {
+		       	'.hidden': {
+			        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
+			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+			        dir2: {
+			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+			        },
+			        '.secrets': { content: 'I\'m still afraid of the dark...' },
+			    },
+			    MyDirectory: {
+			        file1: { content: 'The is the content for file1 in the <public> directory.' },
+			        file2: { content: 'The is the content for file2 in the <public> directory.' },
+			        file3: { content: 'The is the content for file3 in the <public> directory.' },
+			        MySubDir: {
+			            subfile: {content: "This is a nested file."}
+			 	    }
+		    	}
+		    },
 			// history: [
 			// 	{ value: 'Welcome to ShellShock Introduction!' },
 			// ]
@@ -222,6 +383,24 @@ var ShellShock = {
 		sidebar: shellShockSidebar,
 		terminal: {
 			prefix: "trybash@shellshock",
+			structure: {
+		       	'.hidden': {
+			        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
+			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+			        dir2: {
+			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+			        },
+			        '.secrets': { content: 'I\'m still afraid of the dark...' },
+			    },
+			    MyDirectory: {
+			        file1: { content: 'The is the content for file1 in the <public> directory.' },
+			        file2: { content: 'The is the content for file2 in the <public> directory.' },
+			        file3: { content: 'The is the content for file3 in the <public> directory.' },
+			        MySubDir: {
+			            subfile: {content: "This is a nested file."}
+			 	    }
+		    	}
+		    },
 			// history: [
 			// 	{ value: 'Welcome to ShellShock Introduction!' },
 			// ]
@@ -246,6 +425,24 @@ var ShellShock = {
 		sidebar: shellShockSidebar,
 		terminal: {
 			prefix: "trybash@shellshock",
+			structure: {
+		       	'.hidden': {
+			        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
+			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+			        dir2: {
+			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+			        },
+			        '.secrets': { content: 'I\'m still afraid of the dark...' },
+			    },
+			    MyDirectory: {
+			        file1: { content: 'The is the content for file1 in the <public> directory.' },
+			        file2: { content: 'The is the content for file2 in the <public> directory.' },
+			        file3: { content: 'The is the content for file3 in the <public> directory.' },
+			        MySubDir: {
+			            subfile: {content: "This is a nested file."}
+			 	    }
+		    	}
+		    },
 			// history: [
 			// 	{ value: 'Welcome to ShellShock Introduction!' },
 			// ]
@@ -270,6 +467,24 @@ var ShellShock = {
 		sidebar: shellShockSidebar,
 		terminal: {
 			prefix: "trybash@shellshock",
+			structure: {
+		       	'.hidden': {
+			        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
+			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+			        dir2: {
+			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+			        },
+			        '.secrets': { content: 'I\'m still afraid of the dark...' },
+			    },
+			    MyDirectory: {
+			        file1: { content: 'The is the content for file1 in the <public> directory.' },
+			        file2: { content: 'The is the content for file2 in the <public> directory.' },
+			        file3: { content: 'The is the content for file3 in the <public> directory.' },
+			        MySubDir: {
+			            subfile: {content: "This is a nested file."}
+			 	    }
+		    	}
+		    },
 			// history: [
 			// 	{ value: 'Welcome to ShellShock Introduction!' },
 			// ]
@@ -294,6 +509,24 @@ var ShellShock = {
 		sidebar: shellShockSidebar,
 		terminal: {
 			prefix: "trybash@shellshock",
+			structure: {
+		       	'.hidden': {
+			        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
+			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+			        dir2: {
+			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+			        },
+			        '.secrets': { content: 'I\'m still afraid of the dark...' },
+			    },
+			    MyDirectory: {
+			        file1: { content: 'The is the content for file1 in the <public> directory.' },
+			        file2: { content: 'The is the content for file2 in the <public> directory.' },
+			        file3: { content: 'The is the content for file3 in the <public> directory.' },
+			        MySubDir: {
+			            subfile: {content: "This is a nested file."}
+			 	    }
+		    	}
+		    },
 			// history: [
 			// 	{ value: 'Welcome to ShellShock Introduction!' },
 			// ]
@@ -318,6 +551,24 @@ var ShellShock = {
 		sidebar: shellShockSidebar,
 		terminal: {
 			prefix: "trybash@shellshock",
+			structure: {
+		       	'.hidden': {
+			        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
+			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+			        dir2: {
+			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+			        },
+			        '.secrets': { content: 'I\'m still afraid of the dark...' },
+			    },
+			    MyDirectory: {
+			        file1: { content: 'The is the content for file1 in the <public> directory.' },
+			        file2: { content: 'The is the content for file2 in the <public> directory.' },
+			        file3: { content: 'The is the content for file3 in the <public> directory.' },
+			        MySubDir: {
+			            subfile: {content: "This is a nested file."}
+			 	    }
+		    	}
+		    },
 			// history: [
 			// 	{ value: 'Welcome to ShellShock Introduction!' },
 			// ]
@@ -342,6 +593,24 @@ var ShellShock = {
 		sidebar: shellShockSidebar,
 		terminal: {
 			prefix: "trybash@shellshock",
+			structure: {
+		       	'.hidden': {
+			        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
+			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+			        dir2: {
+			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+			        },
+			        '.secrets': { content: 'I\'m still afraid of the dark...' },
+			    },
+			    MyDirectory: {
+			        file1: { content: 'The is the content for file1 in the <public> directory.' },
+			        file2: { content: 'The is the content for file2 in the <public> directory.' },
+			        file3: { content: 'The is the content for file3 in the <public> directory.' },
+			        MySubDir: {
+			            subfile: {content: "This is a nested file."}
+			 	    }
+		    	}
+		    },
 			// history: [
 			// 	{ value: 'Welcome to ShellShock Introduction!' },
 			// ]
@@ -366,6 +635,24 @@ var ShellShock = {
 		sidebar: shellShockSidebar,
 		terminal: {
 			prefix: "trybash@shellshock",
+			structure: {
+		       	'.hidden': {
+			        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
+			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+			        dir2: {
+			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+			        },
+			        '.secrets': { content: 'I\'m still afraid of the dark...' },
+			    },
+			    MyDirectory: {
+			        file1: { content: 'The is the content for file1 in the <public> directory.' },
+			        file2: { content: 'The is the content for file2 in the <public> directory.' },
+			        file3: { content: 'The is the content for file3 in the <public> directory.' },
+			        MySubDir: {
+			            subfile: {content: "This is a nested file."}
+			 	    }
+		    	}
+		    },
 			// history: [
 			// 	{ value: 'Welcome to ShellShock Introduction!' },
 			// ]
@@ -390,6 +677,24 @@ var ShellShock = {
 		sidebar: shellShockSidebar,
 		terminal: {
 			prefix: "trybash@shellshock",
+			structure: {
+		       	'.hidden': {
+			        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
+			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+			        dir2: {
+			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+			        },
+			        '.secrets': { content: 'I\'m still afraid of the dark...' },
+			    },
+			    MyDirectory: {
+			        file1: { content: 'The is the content for file1 in the <public> directory.' },
+			        file2: { content: 'The is the content for file2 in the <public> directory.' },
+			        file3: { content: 'The is the content for file3 in the <public> directory.' },
+			        MySubDir: {
+			            subfile: {content: "This is a nested file."}
+			 	    }
+		    	}
+		    },
 			// history: [
 			// 	{ value: 'Welcome to ShellShock Introduction!' },
 			// ]
@@ -414,6 +719,24 @@ var ShellShock = {
 		sidebar: shellShockSidebar,
 		terminal: {
 			prefix: "trybash@shellshock",
+			structure: {
+		       	'.hidden': {
+			        file1: { content: 'The is the content for file1 in the <.hidden> directory.' },
+			        file2: { content: 'The is the content for file2 in the <.hidden> directory.' },
+			        dir2: {
+			            file: { content: 'The is the content for <file> in the <.hidden> directory.' },
+			        },
+			        '.secrets': { content: 'I\'m still afraid of the dark...' },
+			    },
+			    MyDirectory: {
+			        file1: { content: 'The is the content for file1 in the <public> directory.' },
+			        file2: { content: 'The is the content for file2 in the <public> directory.' },
+			        file3: { content: 'The is the content for file3 in the <public> directory.' },
+			        MySubDir: {
+			            subfile: {content: "This is a nested file."}
+			 	    }
+		    	}
+		    },
 			// history: [
 			// 	{ value: 'Welcome to ShellShock Introduction!' },
 			// ]
