@@ -2,7 +2,6 @@ var React = require('react');
 var ReactRouter = require('react-router');
 var ReactShare = require('react-share');
 var ShareButtons = ReactShare.ShareButtons;
-var ShareCounts = ReactShare.ShareCounts;
 var generateShareIcon = ReactShare.generateShareIcon;
 var SkyLight = require('react-skylight').default;
 var Link = ReactRouter.Link;
@@ -14,28 +13,15 @@ var directionsButton = require('../styles').directionsButton;
 var terminalEvalTextPassing = require('../styles').terminalEvalTextPassing;
 var terminalEvalTextFailing = require('../styles').terminalEvalTextFailing;
 
-const {
-  FacebookShareButton,
-  GooglePlusShareButton,
-  LinkedinShareButton,
-  TwitterShareButton,
-  PinterestShareButton,
-  VKShareButton 
-} = ShareButtons;
-
-const {
-  FacebookShareCount,
-  GooglePlusShareCount,
-  LinkedinShareCount,
-  PinterestShareCount,
-} = ShareCounts;
+const FacebookShareButton = ShareButtons.FacebookShareButton;
+const GooglePlusShareButton = ShareButtons.GooglePlusShareButton;
+const LinkedinShareButton = ShareButtons.LinkedinShareButton;
+const TwitterShareButton = ShareButtons.TwitterShareButton;
 
 const FacebookIcon = generateShareIcon('facebook');
 const TwitterIcon = generateShareIcon('twitter');
 const GooglePlusIcon = generateShareIcon('google');
 const LinkedinIcon = generateShareIcon('linkedin');
-const PinterestIcon = generateShareIcon('pinterest');
-const VKIcon = generateShareIcon('vk');
 
 
 var Directions = React.createClass({
